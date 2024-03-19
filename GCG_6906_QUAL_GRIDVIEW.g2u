@@ -1,0 +1,609 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Quality Checks Dashboard")
+Gui.Form..Size(1024,720)
+Gui.Form..MinX(1024)
+Gui.Form..MinY(720)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.GSGCData.Create(GsGridControl)
+Gui.Form.GSGCData.Enabled(True)
+Gui.Form.GSGCData.Visible(True)
+Gui.Form.GSGCData.Zorder(0)
+Gui.Form.GSGCData.Size(1014,598)
+Gui.Form.GSGCData.Position(5,86)
+Gui.Form.GSGCData.Anchor(15)
+Gui.Form.picGSSLogo.Create(PictureBox)
+Gui.Form.picGSSLogo.Enabled(True)
+Gui.Form.picGSSLogo.Visible(True)
+Gui.Form.picGSSLogo.Zorder(0)
+Gui.Form.picGSSLogo.Size(275,64)
+Gui.Form.picGSSLogo.Position(374,9)
+Gui.Form.picGSSLogo.Anchor(1)
+Gui.Form.chkPart.Create(CheckBox)
+Gui.Form.chkPart.Enabled(True)
+Gui.Form.chkPart.Visible(True)
+Gui.Form.chkPart.Zorder(0)
+Gui.Form.chkPart.Size(75,20)
+Gui.Form.chkPart.Position(10,10)
+Gui.Form.chkPart.Caption("Part #")
+Gui.Form.chkPart.FontName("Tahoma")
+Gui.Form.chkPart.FontSize(8.25)
+Gui.Form.chkPart.Event(Click,chkPart_Click)
+Gui.Form.chkBalloon.Create(CheckBox)
+Gui.Form.chkBalloon.Enabled(True)
+Gui.Form.chkBalloon.Visible(True)
+Gui.Form.chkBalloon.Zorder(0)
+Gui.Form.chkBalloon.Size(75,20)
+Gui.Form.chkBalloon.Position(10,35)
+Gui.Form.chkBalloon.Caption("Balloon #")
+Gui.Form.chkBalloon.FontName("Tahoma")
+Gui.Form.chkBalloon.FontSize(8.25)
+Gui.Form.chkBalloon.Event(Click,chkBalloon_Click)
+Gui.Form.txtPartBrowser.Create(TextBox,"",True,100,20,0,85,11,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtBalloonBrowser.Create(TextBox,"",True,100,20,0,85,35,True,0,"Tahoma",8.25,,1)
+Gui.Form.cmdPartBrowser.Create(Button)
+Gui.Form.cmdPartBrowser.Enabled(True)
+Gui.Form.cmdPartBrowser.Visible(True)
+Gui.Form.cmdPartBrowser.Zorder(0)
+Gui.Form.cmdPartBrowser.Size(20,20)
+Gui.Form.cmdPartBrowser.Position(189,12)
+Gui.Form.cmdPartBrowser.Caption("BROWSE")
+Gui.Form.cmdPartBrowser.FontName("Tahoma")
+Gui.Form.cmdPartBrowser.FontSize(8.25)
+Gui.Form.cmdPartBrowser.Event(Click,cmdPartBrowser_Click)
+Gui.Form.cmdBalloonBrowser.Create(Button)
+Gui.Form.cmdBalloonBrowser.Enabled(True)
+Gui.Form.cmdBalloonBrowser.Visible(True)
+Gui.Form.cmdBalloonBrowser.Zorder(0)
+Gui.Form.cmdBalloonBrowser.Size(20,20)
+Gui.Form.cmdBalloonBrowser.Position(189,35)
+Gui.Form.cmdBalloonBrowser.Caption("BROWSE")
+Gui.Form.cmdBalloonBrowser.FontName("Tahoma")
+Gui.Form.cmdBalloonBrowser.FontSize(8.25)
+Gui.Form.cmdBalloonBrowser.Event(Click,cmdBalloonBrowser_Click)
+Gui.Form.lblStartDate.Create(Label,"Start Date:",True,54,13,0,10,64,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblStartDate.BorderStyle(0)
+Gui.Form.lblEndDate.Create(Label,"End Date:",True,48,13,0,176,64,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblEndDate.BorderStyle(0)
+Gui.Form.dtpStart.Create(DatePicker)
+Gui.Form.dtpStart.Enabled(True)
+Gui.Form.dtpStart.Visible(True)
+Gui.Form.dtpStart.Zorder(0)
+Gui.Form.dtpStart.Size(80,20)
+Gui.Form.dtpStart.Position(85,60)
+Gui.Form.dtpStart.CheckBox(False)
+Gui.Form.dtpStart.FontName("Tahoma")
+Gui.Form.dtpStart.FontSize(8.25)
+Gui.Form.dtpEnd.Create(DatePicker)
+Gui.Form.dtpEnd.Enabled(True)
+Gui.Form.dtpEnd.Visible(True)
+Gui.Form.dtpEnd.Zorder(0)
+Gui.Form.dtpEnd.Size(80,20)
+Gui.Form.dtpEnd.Position(232,60)
+Gui.Form.dtpEnd.CheckBox(False)
+Gui.Form.dtpEnd.FontName("Tahoma")
+Gui.Form.dtpEnd.FontSize(8.25)
+Gui.Form.cmdRefresh.Create(Button)
+Gui.Form.cmdRefresh.Enabled(True)
+Gui.Form.cmdRefresh.Visible(True)
+Gui.Form.cmdRefresh.Zorder(0)
+Gui.Form.cmdRefresh.Size(25,25)
+Gui.Form.cmdRefresh.Position(317,58)
+Gui.Form.cmdRefresh.Caption("REFRESH")
+Gui.Form.cmdRefresh.FontName("Tahoma")
+Gui.Form.cmdRefresh.FontSize(8.25)
+Gui.Form.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.Form.chkAllData.Create(CheckBox)
+Gui.Form.chkAllData.Enabled(True)
+Gui.Form.chkAllData.Visible(True)
+Gui.Form.chkAllData.Zorder(0)
+Gui.Form.chkAllData.Size(75,20)
+Gui.Form.chkAllData.Position(232,11)
+Gui.Form.chkAllData.Caption("All Data")
+Gui.Form.chkAllData.FontName("Tahoma")
+Gui.Form.chkAllData.FontSize(8.25)
+Gui.Form.chkAllData.Event(Click,chkAllData_Click)
+Gui.Form.chkAllDates.Create(CheckBox)
+Gui.Form.chkAllDates.Enabled(True)
+Gui.Form.chkAllDates.Visible(True)
+Gui.Form.chkAllDates.Zorder(0)
+Gui.Form.chkAllDates.Size(75,20)
+Gui.Form.chkAllDates.Position(232,35)
+Gui.Form.chkAllDates.Caption("All Dates")
+Gui.Form.chkAllDates.FontName("Tahoma")
+Gui.Form.chkAllDates.FontSize(8.25)
+Gui.Form.chkAllDates.Event(Click,chkAllDates_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+
+	Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+	V.Local.sIcon.Declare(String)
+	V.Local.sGssLogo.Declare(String)
+	
+	'Set GS Logo
+	F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)		
+	F.Intrinsic.String.Build("{0}\ART\GAB_GSS_Logo_Green_Dash.png",V.Caller.GlobalDir,V.Local.sGssLogo)
+	GUI.Form..Icon(v.Local.sIcon)
+	GUI.Form.picGSSLogo.Picture(v.Local.sGssLogo)
+	
+	'Call existing chkBalloon sub to default search by part
+	F.Intrinsic.Control.CallSub(chkBalloon_Click)
+	F.Intrinsic.Control.CallSub(SetContextMenu)
+	
+	'Default search by part
+	GUI.Form..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.chkPart_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sChecked.Declare(String)
+	V.Local.sMsg.Declare(String)
+	
+	'Block all other events from triggering
+	F.Intrinsic.Control.BlockEvents
+	
+	'Enable part browser if part check box is checked, otherwise disable
+	F.Intrinsic.Control.If(V.Screen.Form!chkPart.CheckedAsBoolean, =, True)
+		'Disable opposite control
+		GUI.Form.cmdBalloonBrowser.Enabled(False)
+		GUI.Form.txtBalloonBrowser.Text("")
+		GUI.Form.chkBalloon.Value(0)
+		GUI.Form.chkAllData.Value(0)
+		
+		'Enable current control
+		GUI.Form.cmdPartBrowser.Enabled(True)
+		
+	F.Intrinsic.Control.Else
+		'Enable opposite control
+		GUI.Form.cmdPartBrowser.Enabled(False)
+		GUI.Form.cmdBalloonBrowser.Enabled(True)
+		GUI.Form.chkBalloon.Value(1)
+	
+	F.Intrinsic.Control.EndIf
+	
+	'Unblock events
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkPart_Click.End
+
+Program.Sub.chkBalloon_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sChecked.Declare(String)
+V.Local.sMsg.Declare(String)
+
+	'Block all other events from triggering
+	F.Intrinsic.Control.BlockEvents
+	
+	'Enable part browser if part check box is checked, otherwise disable
+	F.Intrinsic.Control.If(V.Screen.Form!chkBalloon.CheckedAsBoolean, =, True)
+		'Disable opposite control
+		GUI.Form.cmdPartBrowser.Enabled(False)
+		GUI.Form.txtPartBrowser.Text("")
+		GUI.Form.chkPart.Value(0)
+		GUI.Form.chkAllData.Value(0)
+		
+		'Enable current control
+		GUI.Form.cmdBalloonBrowser.Enabled(True)
+		
+	F.Intrinsic.Control.Else
+		'Enable opposite control
+		GUI.Form.cmdBalloonBrowser.Enabled(False)
+		GUI.Form.cmdPartBrowser.Enabled(True)
+		GUI.Form.chkPart.Value(1)
+	
+	F.Intrinsic.Control.EndIf
+	
+	'Ublock events
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkBalloon_Click.End
+
+Program.Sub.cmdPartBrowser_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sColTitles.Declare(String)
+	V.Local.sColWidths.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	V.Local.sColTitles.Set("Part #")
+	V.Local.sColWidths.Set("500")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+	
+	F.Intrinsic.UI.Browser("Select Part #", "con", "Select distinct rtrim(PART) from GCG_6906_QUAL_CHECKS", V.Local.sColTitles, V.Local.sColWidths, 4500, 7000, V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet, !=, "***CANCEL***")
+		GUI.Form.txtPartBrowser.Text(V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdPartBrowser_Click.End
+
+Program.Sub.cmdBalloonBrowser_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sColTitles.Declare(String)
+	V.Local.sColWidths.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	V.Local.sColTitles.Set("Balloon #")
+	V.Local.sColWidths.Set("500")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+	
+	F.Intrinsic.UI.Browser("Select Balloon #", "con", "Select distinct rtrim(DIMENSION) from GCG_6906_QUAL_PLAN", V.Local.sColTitles, V.Local.sColWidths, 4500, 7000, V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet, !=, "***CANCEL***")
+		GUI.Form.txtBalloonBrowser.Text(V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.Close
+	
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBalloonBrowser_Click.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sStart.Declare(String)
+	V.Local.sEnd.Declare(String)
+	V.Local.sWhereDate.Declare(String)
+	V.Local.sWherePart.Declare(String)
+	V.Local.sWhereBalloon.Declare(String)
+	V.Local.sParam.Declare(String)
+	V.Local.sSql.Declare(String)
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Loading data...", "Quality Checks Dashboard 6906")
+	
+	'Check that dates have been selected and the range is valid
+	F.Intrinsic.Control.If(V.Screen.Form!chkAllDates.CheckedAsBoolean, =, False)
+	
+		F.Intrinsic.Control.If(V.Screen.Form!dtpStart.Value, >, V.Screen.Form!dtpEnd.Value)
+			F.Intrinsic.UI.Msgbox("Start date is greater than ending date, please correct and try again", "Warning")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		'Build date range parameter
+		F.Intrinsic.String.Format(V.Screen.Form!dtpStart.Value, "YYYY-MM-DD", V.Local.sStart)
+		F.Intrinsic.String.Format(V.Screen.Form!dtpEnd.Value, "YYYY-MM-DD", V.Local.sEnd)
+		F.Intrinsic.String.Build("A.DATE > '{0}' and A.DATE < '{1}'", V.Local.sStart, V.Local.sEnd, V.Local.sWhereDate)
+		
+	F.Intrinsic.Control.Else
+		'If all dates check box is selected blank date range parameter
+		V.Local.sWhereDate.Set("")
+		
+	F.Intrinsic.Control.EndIf
+	
+	'Build parameter by Part # 
+	'---------------------------------------------------------------------------------------------------------------------------
+	F.Intrinsic.Control.If(V.Screen.Form!chkPart.CheckedAsBoolean, =, True)
+		'Check a part # has been selected
+		F.Intrinsic.Control.If(V.Screen.Form!txtPartBrowser.Text, =, "")
+			F.Intrinsic.UI.Msgbox("Please select a part # and try again", "Warning")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.String.Build("where PART = '{0}'", V.Screen.Form!txtPartBrowser.Text, V.Local.sParam)
+	
+	F.Intrinsic.Control.EndIf
+	'---------------------------------------------------------------------------------------------------------------------------
+	
+	'Load grid by Balloon #
+	'---------------------------------------------------------------------------------------------------------------------------
+	F.Intrinsic.Control.If(V.Screen.Form!chkBalloon.CheckedAsBoolean, =, True)
+		'Check a balloon # has been selected
+		F.Intrinsic.Control.If(V.Screen.Form!txtBalloonBrowser.Text, =, "")
+			F.Intrinsic.UI.Msgbox("Please select a balloon # and try again", "Warning")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("where B.DIMENSION = '{0}'", V.Screen.Form!txtBalloonBrowser.Text, V.Local.sParam)
+	
+	F.Intrinsic.Control.EndIf
+	'---------------------------------------------------------------------------------------------------------------------------
+	
+	'Load grid by all data
+	'---------------------------------------------------------------------------------------------------------------------------
+	F.Intrinsic.Control.If(V.Screen.Form!chkAllData.CheckedAsBoolean, =, True)
+		V.Local.sParam.Set("")
+	F.Intrinsic.Control.EndIf
+	'---------------------------------------------------------------------------------------------------------------------------
+	
+	'Finalize where clause depending on selection preference
+	'---------------------------------------------------------------------------------------------------------------------------
+	F.Intrinsic.Control.If(V.Local.sParam, !=, "", AND, V.Local.sWhereDate, !=, "")
+			F.Intrinsic.String.Build("and {0}", V.Local.sWhereDate, V.Local.sWhereDate)
+	
+	F.Intrinsic.Control.ElseIf(V.Local.sWhereDate, !=, "")
+		F.Intrinsic.String.Build("where {0}", V.Local.sWhereDate, V.Local.sWhereDate)
+		
+	F.Intrinsic.Control.EndIf
+	'---------------------------------------------------------------------------------------------------------------------------
+
+	'Open ODBC connection
+	F.ODBC.Connection!con.OpenCompanyConnection
+	
+	'Create main datatable
+	F.Intrinsic.String.Build("Select A.DATE, IF(A.SUFFIX <> '', A.JOB + '-' + A.SUFFIX, A.JOB) WO, RTRIM(A.PART) PART, RTRIM(A.EMPLOYEE_NO) EMPLOYEE_NO, RTRIM(B.DIMENSION) DIMENSION, RTRIM(B.METHOD) METHOD, RTRIM(B.CRITERIA_MIN) CRITERIA_MIN, RTRIM(B.CRITERIA_MAX) CRITERIA_MAX, RTRIM(A.MEASUREMENT) MEASUREMENT, RTRIM(B.UOM) UOM from GCG_6906_QUAL_CHECKS A left join GCG_6906_QUAL_PLAN B on A.KEY_SEQUENCE = B.KEY_SEQUENCE {0} {1}", V.Local.sParam, V.Local.sWhereDate, V.Local.sSql)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtData.Exists)
+		F.Data.Datatable.Close("dtData")
+	F.Intrinsic.Control.EndIf
+	F.Data.Datatable.CreateFromSQL("dtData", "con", V.Local.sSql, True)
+	
+	'Close ODBC connection
+	F.ODBC.Connection!con.Close
+	'Format data grid
+	F.Intrinsic.Control.CallSub(FormatGrid)
+	
+	F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.FormatGrid.Start
+F.Intrinsic.Control.Try
+
+	'Create gridview
+	GUI.Form.GSGCData.AddGridviewFromDatatable("gvData", "dtData")
+	
+	'Set gridview properties
+	GUI.Form.GSGCData.SetGridviewProperty("gvData", V.Enum.GridViewPropertyNames!ColumnAutoWidth, True)
+	GUI.Form.GSGCData.SetGridviewProperty("gvData", V.Enum.GridViewPropertyNames!AllowColumnResizing, True)
+	
+	'Bold table headers
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DATE", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "WO", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "PART", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "EMPLOYEE_NO", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DIMENSION", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "METHOD", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MIN", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MAX", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "MEASUREMENT", "HeaderFontBold", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "UOM", "HeaderFontBold", True)
+	
+	'Set allow edit properties
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DATE", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "WO", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "PART", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "EMPLOYEE_NO", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DIMENSION", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "METHOD", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MIN", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MAX", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "MEASUREMENT", "AllowEdit", False)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "UOM", "AllowEdit", False)
+	
+	'Set read only properties
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DATE", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "WO", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "PART", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "EMPLOYEE_NO", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DIMENSION", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "METHOD", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MIN", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MAX", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "MEASUREMENT", "ReadOnly", True)
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "UOM", "ReadOnly", True)
+	
+	'Set column captions
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DATE", "Caption", "Date")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "WO", "Caption", "WO#")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "PART", "Caption", "Part")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "EMPLOYEE_NO", "Caption", "Employee ID")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DIMENSION", "Caption", "Balloon#")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "METHOD", "Caption", "Method")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MIN", "Caption", "Min")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "CRITERIA_MAX", "Caption", "Max")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "MEASUREMENT", "Caption", "Measurement")
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "UOM", "Caption", "UM")
+	
+	'Format date column
+	GUI.Form.GSGCData.SetColumnProperty("gvData", "DATE", V.Enum.ColumnPropertyNames!DisplayCustomDatetime, "d")
+	
+	GUI.Form.GSGCData.MainView("gvData")
+	F.Intrinsic.Control.CallSub(Deserialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid.End
+
+Program.Sub.chkAllDates_Click.Start
+F.Intrinsic.Control.Try
+
+	'Block all other events from triggering
+	F.Intrinsic.Control.BlockEvents
+	
+	'Disable date pickers when all dates checkbox is checked
+	F.Intrinsic.Control.If(V.Screen.Form!chkAllDates.CheckedAsBoolean, =, True)
+		GUI.Form.dtpStart.Enabled(False)
+		GUI.Form.dtpEnd.Enabled(False)
+		
+	F.Intrinsic.Control.Else
+		GUI.Form.dtpStart.Enabled(True)
+		GUI.Form.dtpEnd.Enabled(True)
+		
+	F.Intrinsic.Control.EndIf
+	
+	'Unblock events
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkAllDates_Click.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sSerialize.Declare(String)
+	
+	GUI.Form.GSGCData.Serialize("gvData",V.Local.sSerialize)
+	
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvData",100000,6906,False,"Serialize",False,0,0,V.Ambient.Date,V.Ambient.Time,V.Local.sSerialize)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+
+	V.Local.sSerialize.Declare(String)
+	
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvData",100000,6906,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		GUI.Form.GSGCData.Deserialize(V.Local.sSerialize)
+		
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.chkAllData_Click.Start
+'Block all other events from triggering
+F.Intrinsic.Control.BlockEvents
+
+F.Intrinsic.Control.If(V.Screen.Form!chkAllData.CheckedAsBoolean, =, True)
+	'Disable all other data selection controls
+	GUI.Form.cmdPartBrowser.Enabled(False)
+	GUI.Form.txtPartBrowser.Text("")
+	GUI.Form.chkPart.Value(0)
+	GUI.Form.cmdBalloonBrowser.Enabled(False)
+	GUI.Form.txtBalloonBrowser.Text("")
+	GUI.Form.chkBalloon.Value(0)
+	
+F.Intrinsic.Control.Else
+	GUI.Form.chkPart.Value(1)
+	GUI.Form.cmdPartBrowser.Enabled(True)
+	
+F.Intrinsic.Control.EndIf
+
+'Unblock events
+F.Intrinsic.Control.UnBlockEvents
+
+Program.Sub.chkAllData_Click.End
+
+Program.Sub.SetContextMenu.Start
+F.Intrinsic.Control.Try
+
+	'Create and attach context menu
+	GUI.Form..ContextMenuCreate("ContextMenu")
+	GUI.Form.GSGCData.ContextMenuAttach("ContextMenu")
+	'Export to Excel context menu
+	GUI.Form..ContextMenuAddItem("ContextMenu", "Export", 0, "Export Grid")
+	GUI.Form..ContextMenuSetItemEventHandler("ContextMenu", "Export", "Export")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenu.End
+
+Program.Sub.Export.Start
+F.Intrinsic.Control.Try
+
+	V.Local.bFileLocked.Declare(Boolean)
+	V.Local.sFileExport.Declare(String)
+	V.Local.bExcel.Declare(Boolean)
+	V.Local.sMsg.Declare(String)
+	V.Local.sFileExtension.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	GUI.Form.GSGCData.CreateDataView("gvData", "dtData", "dvFiltered")
+	
+	'Check for Excel on machine to export as .xlsx
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	'Export as either xlsx or csv depending on availability of Excel
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		V.Local.sFileExtension.Set("xlsx")
+	F.Intrinsic.Control.Else
+		V.Local.sFileExtension.Set("csv")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}QualCheckExport.{1}",V.Caller.LocalGSSTempDir,V.Local.sFileExtension,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		GUI.Form.GSGCData.Export(V.Local.sFileExport,V.Local.sFileExtension)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Task.ShellExec(handle,"",V.Local.sFileExport,"","",1)
+	
+	'Close dataview
+	F.Data.DataView.Close("dtData", "dvFiltered")
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Export.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Error.Start
+V.Local.sError.Declare
+V.Local.iRet.Declare
+V.Local.sSep.Declare
+
+F.Intrinsic.String.Build("-------------------------------------------------------------------------------------",,V.Local.sSep)
+F.Intrinsic.String.Build("({5}-{6}){0}{7}{0}Project: {4}{0}{7}{0}Sub: {1}{0}Error: {2},{3}",V.Ambient.NewLine,V.Args.SubRoutine,V.Args.eNumber,V.Args.eDescription,V.Caller.ScriptFile,V.Ambient.Date,V.Ambient.Time,V.Local.sSep,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Error",V.Local.iRet)
+F.Intrinsic.Control.CallSub(Form_Unload)
+Program.Sub.Error.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8286.22461$}$1
+${$6$}$Angel$}$20230602133752823$}$KXl0r/FkrMYwb/r4ukQ87VNzvoHa8Zo7Ks5/TpkfEUeTnKvmgTUwt+QcmQEe3RbySeg4c8i8QwY=
+Program.Sub.Comments.End
