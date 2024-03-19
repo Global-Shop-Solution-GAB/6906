@@ -1,0 +1,2219 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.QualPlanForm..Create(BaseForm)
+Gui.QualPlanForm..Caption("Quality Plan")
+Gui.QualPlanForm..Size(1136,389)
+Gui.QualPlanForm..MinX(0)
+Gui.QualPlanForm..MinY(0)
+Gui.QualPlanForm..Position(0,0)
+Gui.QualPlanForm..AlwaysOnTop(False)
+Gui.QualPlanForm..FontName("Tahoma")
+Gui.QualPlanForm..FontSize(8.25)
+Gui.QualPlanForm..ControlBox(True)
+Gui.QualPlanForm..MaxButton(True)
+Gui.QualPlanForm..MinButton(True)
+Gui.QualPlanForm..MousePointer(0)
+Gui.QualPlanForm..Moveable(True)
+Gui.QualPlanForm..Sizeable(False)
+Gui.QualPlanForm..ShowInTaskBar(True)
+Gui.QualPlanForm..TitleBar(True)
+Gui.QualPlanForm..Event(UnLoad,QualPlanForm_UnLoad)
+Gui.QualPlanForm.txt_Router.Create(TextBox,"",True,100,20,0,76,16,False,0,"Tahoma",8.25,,1)
+Gui.QualPlanForm.lbl1.Create(Label,"Router No.",True,53,13,0,20,20,True,0,"Tahoma",8.25,,0,0)
+Gui.QualPlanForm.lbl1.BorderStyle(0)
+Gui.QualPlanForm.ddl_Sequences.Create(DropDownList)
+Gui.QualPlanForm.ddl_Sequences.Enabled(True)
+Gui.QualPlanForm.ddl_Sequences.Visible(True)
+Gui.QualPlanForm.ddl_Sequences.Zorder(0)
+Gui.QualPlanForm.ddl_Sequences.Size(100,20)
+Gui.QualPlanForm.ddl_Sequences.Position(239,16)
+Gui.QualPlanForm.ddl_Sequences.FontName("Tahoma")
+Gui.QualPlanForm.ddl_Sequences.FontSize(8.25)
+Gui.QualPlanForm.ddl_Sequences.Event(Change,ddl_Sequences_Change)
+Gui.QualPlanForm.lbl2.Create(Label,"Sequence:",True,51,13,0,185,20,True,0,"Tahoma",8.25,,0,0)
+Gui.QualPlanForm.lbl2.BorderStyle(0)
+Gui.QualPlanForm.GSGC_QualityPlan.Create(GsGridControl)
+Gui.QualPlanForm.GSGC_QualityPlan.Enabled(True)
+Gui.QualPlanForm.GSGC_QualityPlan.Visible(True)
+Gui.QualPlanForm.GSGC_QualityPlan.Zorder(0)
+Gui.QualPlanForm.GSGC_QualityPlan.Size(1124,308)
+Gui.QualPlanForm.GSGC_QualityPlan.Position(7,47)
+Gui.QualPlanForm.GSGC_QualityPlan.Event(RowCellClick,GSGC_QualityPlan_RowCellClick)
+Gui.QualPlanForm.cmdAddItem.Create(Button)
+Gui.QualPlanForm.cmdAddItem.Enabled(True)
+Gui.QualPlanForm.cmdAddItem.Visible(True)
+Gui.QualPlanForm.cmdAddItem.Zorder(0)
+Gui.QualPlanForm.cmdAddItem.Size(75,23)
+Gui.QualPlanForm.cmdAddItem.Position(966,16)
+Gui.QualPlanForm.cmdAddItem.Caption("ADD ITEM")
+Gui.QualPlanForm.cmdAddItem.FontName("Tahoma")
+Gui.QualPlanForm.cmdAddItem.FontSize(8.25)
+Gui.QualPlanForm.cmdAddItem.Event(Click,cmdAddItem_Click)
+Gui.QualPlanForm.cmdCopyToRouter.Create(Button)
+Gui.QualPlanForm.cmdCopyToRouter.Enabled(True)
+Gui.QualPlanForm.cmdCopyToRouter.Visible(True)
+Gui.QualPlanForm.cmdCopyToRouter.Zorder(0)
+Gui.QualPlanForm.cmdCopyToRouter.Size(75,23)
+Gui.QualPlanForm.cmdCopyToRouter.Position(1047,16)
+Gui.QualPlanForm.cmdCopyToRouter.Caption("COPY PLAN")
+Gui.QualPlanForm.cmdCopyToRouter.FontName("Tahoma")
+Gui.QualPlanForm.cmdCopyToRouter.FontSize(8.25)
+Gui.QualPlanForm.cmdCopyToRouter.Event(Click,cmdCopyToRouter_Click)
+Gui.AddItemForm..Create(BaseForm)
+Gui.AddItemForm..Caption("New Item")
+Gui.AddItemForm..Size(464,183)
+Gui.AddItemForm..MinX(0)
+Gui.AddItemForm..MinY(0)
+Gui.AddItemForm..Position(0,0)
+Gui.AddItemForm..AlwaysOnTop(False)
+Gui.AddItemForm..FontName("Tahoma")
+Gui.AddItemForm..FontSize(8.25)
+Gui.AddItemForm..ControlBox(True)
+Gui.AddItemForm..MaxButton(True)
+Gui.AddItemForm..MinButton(True)
+Gui.AddItemForm..MousePointer(0)
+Gui.AddItemForm..Moveable(True)
+Gui.AddItemForm..Sizeable(False)
+Gui.AddItemForm..ShowInTaskBar(True)
+Gui.AddItemForm..TitleBar(True)
+Gui.AddItemForm..Event(UnLoad,AddItemForm_UnLoad)
+Gui.AddItemForm.lblDimension.Create(Label,"Balloon #:",True,49,13,0,17,15,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lblDimension.BorderStyle(0)
+Gui.AddItemForm.lblMethod.Create(Label,"Method:",True,40,13,0,17,65,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lblMethod.BorderStyle(0)
+Gui.AddItemForm.lblFrequency.Create(Label,"Frequency:",True,55,13,0,17,40,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lblFrequency.BorderStyle(0)
+Gui.AddItemForm.lbl6.Create(Label,"UOM:",True,27,13,0,17,90,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lbl6.BorderStyle(0)
+Gui.AddItemForm.lblProcDim.Create(Label,"Process Dimension:",True,92,13,0,209,64,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lblProcDim.BorderStyle(0)
+Gui.AddItemForm.lblProcDimDesc.Create(Label,"Process Dimension Desc:",True,118,13,0,209,15,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lblProcDimDesc.BorderStyle(0)
+Gui.AddItemForm.lbl9.Create(Label,"Min:",True,20,13,0,236,91,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lbl9.BorderStyle(0)
+Gui.AddItemForm.lbl10.Create(Label,"Max:",True,24,13,0,332,91,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lbl10.BorderStyle(0)
+Gui.AddItemForm.txtDimension.Create(TextBox,"",True,115,20,0,81,14,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtDimension.TabStop(True)
+Gui.AddItemForm.txtDimension.TabIndex(1)
+Gui.AddItemForm.txtFrequency.Create(TextBox,"",True,115,20,0,81,38,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtFrequency.MaxLength(40)
+Gui.AddItemForm.txtFrequency.TabStop(True)
+Gui.AddItemForm.txtFrequency.TabIndex(2)
+Gui.AddItemForm.txtMin.Create(TextBox,"",True,60,20,0,264,88,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtMin.NumericOnly(1)
+Gui.AddItemForm.txtMin.MaxLength(9)
+Gui.AddItemForm.txtMin.TabStop(True)
+Gui.AddItemForm.txtMin.TabIndex(8)
+Gui.AddItemForm.txtProcDimDesc.Create(TextBox,"",True,115,20,0,335,13,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtProcDimDesc.MaxLength(40)
+Gui.AddItemForm.txtProcDimDesc.TabStop(True)
+Gui.AddItemForm.txtProcDimDesc.TabIndex(5)
+Gui.AddItemForm.txtProcDim.Create(TextBox,"",True,60,20,0,335,61,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtProcDim.MaxLength(9)
+Gui.AddItemForm.txtProcDim.NumericOnly(1)
+Gui.AddItemForm.txtProcDim.TabStop(True)
+Gui.AddItemForm.txtProcDim.TabIndex(7)
+Gui.AddItemForm.txtMax.Create(TextBox,"",True,60,20,0,362,88,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtMax.NumericOnly(1)
+Gui.AddItemForm.txtMax.MaxLength(9)
+Gui.AddItemForm.txtMax.TabStop(True)
+Gui.AddItemForm.txtMax.TabIndex(9)
+Gui.AddItemForm.cmdSaveNewItem.Create(Button)
+Gui.AddItemForm.cmdSaveNewItem.Enabled(True)
+Gui.AddItemForm.cmdSaveNewItem.Visible(True)
+Gui.AddItemForm.cmdSaveNewItem.Zorder(0)
+Gui.AddItemForm.cmdSaveNewItem.Size(75,23)
+Gui.AddItemForm.cmdSaveNewItem.Position(380,122)
+Gui.AddItemForm.cmdSaveNewItem.Caption("SAVE")
+Gui.AddItemForm.cmdSaveNewItem.FontName("Tahoma")
+Gui.AddItemForm.cmdSaveNewItem.FontSize(8.25)
+Gui.AddItemForm.cmdSaveNewItem.Event(Click,cmdSaveNewItem_Click)
+Gui.AddItemForm.chkPassFail.Create(CheckBox)
+Gui.AddItemForm.chkPassFail.Enabled(True)
+Gui.AddItemForm.chkPassFail.Visible(True)
+Gui.AddItemForm.chkPassFail.Zorder(0)
+Gui.AddItemForm.chkPassFail.Size(103,20)
+Gui.AddItemForm.chkPassFail.Position(16,114)
+Gui.AddItemForm.chkPassFail.Caption("Pass/Fail Only")
+Gui.AddItemForm.chkPassFail.FontName("Tahoma")
+Gui.AddItemForm.chkPassFail.FontSize(8.25)
+Gui.AddItemForm.chkPassFail.Alignment(1)
+Gui.AddItemForm.chkPassFail.Event(Change,chkPassFail_Change)
+Gui.AddItemForm.txtMethod.Create(TextBox,"",True,115,20,0,81,62,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtMethod.MaxLength(40)
+Gui.AddItemForm.txtMethod.TabStop(True)
+Gui.AddItemForm.txtMethod.TabIndex(3)
+Gui.AddItemForm.ddlUOM.Create(DropDownList)
+Gui.AddItemForm.ddlUOM.Enabled(True)
+Gui.AddItemForm.ddlUOM.Visible(True)
+Gui.AddItemForm.ddlUOM.Zorder(0)
+Gui.AddItemForm.ddlUOM.Size(81,20)
+Gui.AddItemForm.ddlUOM.Position(81,86)
+Gui.AddItemForm.ddlUOM.FontName("Tahoma")
+Gui.AddItemForm.ddlUOM.FontSize(8.25)
+Gui.AddItemForm.ddlUOM.TabStop(True)
+Gui.AddItemForm.ddlUOM.TabIndex(4)
+Gui.AddItemForm.cmdDelete.Create(Button)
+Gui.AddItemForm.cmdDelete.Enabled(True)
+Gui.AddItemForm.cmdDelete.Visible(True)
+Gui.AddItemForm.cmdDelete.Zorder(0)
+Gui.AddItemForm.cmdDelete.Size(75,23)
+Gui.AddItemForm.cmdDelete.Position(299,122)
+Gui.AddItemForm.cmdDelete.Caption("DELETE")
+Gui.AddItemForm.cmdDelete.FontName("Tahoma")
+Gui.AddItemForm.cmdDelete.FontSize(8.25)
+Gui.AddItemForm.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.AddItemForm.lblGauge.Create(Label,"Gauge #:",True,46,13,0,210,40,True,0,"Tahoma",8.25,,0,0)
+Gui.AddItemForm.lblGauge.BorderStyle(0)
+Gui.AddItemForm.txtGauge.Create(TextBox,"",True,115,20,0,335,36,True,0,"Tahoma",8.25,,1)
+Gui.AddItemForm.txtGauge.TabStop(True)
+Gui.AddItemForm.txtGauge.TabIndex(6)
+Gui.QualCheck..Create(BaseForm)
+Gui.QualCheck..Caption("Quality Checks")
+Gui.QualCheck..Size(1240,467)
+Gui.QualCheck..MinX(0)
+Gui.QualCheck..MinY(0)
+Gui.QualCheck..Position(0,0)
+Gui.QualCheck..AlwaysOnTop(False)
+Gui.QualCheck..FontName("Tahoma")
+Gui.QualCheck..FontSize(8.25)
+Gui.QualCheck..ControlBox(True)
+Gui.QualCheck..MaxButton(True)
+Gui.QualCheck..MinButton(True)
+Gui.QualCheck..MousePointer(0)
+Gui.QualCheck..Moveable(True)
+Gui.QualCheck..Sizeable(False)
+Gui.QualCheck..ShowInTaskBar(True)
+Gui.QualCheck..TitleBar(True)
+Gui.QualCheck..Event(UnLoad,QualCheck_UnLoad)
+Gui.QualCheck.GSCG_QualCheck.Create(GsGridControl)
+Gui.QualCheck.GSCG_QualCheck.Enabled(True)
+Gui.QualCheck.GSCG_QualCheck.Visible(True)
+Gui.QualCheck.GSCG_QualCheck.Zorder(0)
+Gui.QualCheck.GSCG_QualCheck.Size(1228,342)
+Gui.QualCheck.GSCG_QualCheck.Position(5,59)
+Gui.QualCheck.GSCG_QualCheck.Event(CellValueChanged,GSCG_QualCheck_CellValueChanged)
+Gui.QualCheck.GSCG_QualCheck.Event(RowCellClick,GSCG_QualCheck_RowCellClick)
+Gui.QualCheck.lblEmployeeNo.Create(Label,"Employee No.",True,75,13,0,5,11,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblEmployeeNo.BorderStyle(0)
+Gui.QualCheck.lblEmployeeNo.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblEmployeeName.Create(Label,"Employee Name:",True,93,13,0,5,35,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblEmployeeName.BorderStyle(0)
+Gui.QualCheck.lblEmployeeName.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblEmpNoText.Create(Label,"Emp No. Text",True,65,13,0,110,11,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblEmpNoText.BorderStyle(0)
+Gui.QualCheck.lblEmpNameText.Create(Label,"Emp Name Text",True,75,13,0,110,35,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblEmpNameText.BorderStyle(0)
+Gui.QualCheck.lblWO.Create(Label,"WO:",True,27,16,0,565,32,True,0,"Tahoma",10,,0,0)
+Gui.QualCheck.lblWO.BorderStyle(0)
+Gui.QualCheck.lblWO.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblSuffix.Create(Label,"SUFFIX:",True,47,16,0,674,32,True,0,"Tahoma",10,,0,0)
+Gui.QualCheck.lblSuffix.BorderStyle(0)
+Gui.QualCheck.lblSuffix.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblSEQ.Create(Label,"SEQ:",True,29,16,0,812,32,True,0,"Tahoma",10,,0,0)
+Gui.QualCheck.lblSEQ.BorderStyle(0)
+Gui.QualCheck.lblSEQ.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblWOText.Create(Label,"WOLabel",True,51,16,0,599,32,True,0,"Tahoma",10,,0,0)
+Gui.QualCheck.lblWOText.BorderStyle(0)
+Gui.QualCheck.lblSuffixText.Create(Label,"SuffixText",True,57,16,0,732,32,True,0,"Tahoma",10,,0,0)
+Gui.QualCheck.lblSuffixText.BorderStyle(0)
+Gui.QualCheck.lblSEQText.Create(Label,"SeqText",True,47,16,0,850,32,True,0,"Tahoma",10,,0,0)
+Gui.QualCheck.lblSEQText.BorderStyle(0)
+Gui.QualCheck.cmdSaveInput.Create(Button)
+Gui.QualCheck.cmdSaveInput.Enabled(True)
+Gui.QualCheck.cmdSaveInput.Visible(True)
+Gui.QualCheck.cmdSaveInput.Zorder(0)
+Gui.QualCheck.cmdSaveInput.Size(75,23)
+Gui.QualCheck.cmdSaveInput.Position(1159,407)
+Gui.QualCheck.cmdSaveInput.Caption("SAVE")
+Gui.QualCheck.cmdSaveInput.FontName("Tahoma")
+Gui.QualCheck.cmdSaveInput.FontSize(8.25)
+Gui.QualCheck.cmdSaveInput.Event(Click,cmdSaveInput_Click)
+Gui.QualCheck.cmdSaveSheet.Create(Button)
+Gui.QualCheck.cmdSaveSheet.Enabled(True)
+Gui.QualCheck.cmdSaveSheet.Visible(True)
+Gui.QualCheck.cmdSaveSheet.Zorder(0)
+Gui.QualCheck.cmdSaveSheet.Size(75,23)
+Gui.QualCheck.cmdSaveSheet.Position(1077,407)
+Gui.QualCheck.cmdSaveSheet.Caption("SAVE SHEET")
+Gui.QualCheck.cmdSaveSheet.FontName("Tahoma")
+Gui.QualCheck.cmdSaveSheet.FontSize(8.25)
+Gui.QualCheck.cmdSaveSheet.Event(Click,cmdSaveSheet_Click)
+Gui.QualCheck.lblCurrentSheet.Create(Label,"Current Sheet:",True,82,13,0,652,8,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblCurrentSheet.BorderStyle(0)
+Gui.QualCheck.lblCurrentSheet.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblCurrentSheetText.Create(Label,"Label",True,25,13,0,742,8,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblCurrentSheetText.BorderStyle(0)
+Gui.QualCheck.lblPart.Create(Label,"Part:",True,27,13,0,805,8,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblPart.BorderStyle(0)
+Gui.QualCheck.lblPart.FontStyle(True,False,False,False,False)
+Gui.QualCheck.lblPartText.Create(Label,"Label",True,25,13,0,837,8,True,0,"Tahoma",8.25,,0,0)
+Gui.QualCheck.lblPartText.BorderStyle(0)
+Gui.Override..Create(BaseForm)
+Gui.Override..Caption("Override")
+Gui.Override..Size(223,123)
+Gui.Override..MinX(0)
+Gui.Override..MinY(0)
+Gui.Override..Position(0,0)
+Gui.Override..AlwaysOnTop(False)
+Gui.Override..FontName("Tahoma")
+Gui.Override..FontSize(8.25)
+Gui.Override..ControlBox(True)
+Gui.Override..MaxButton(True)
+Gui.Override..MinButton(True)
+Gui.Override..MousePointer(0)
+Gui.Override..Moveable(True)
+Gui.Override..Sizeable(True)
+Gui.Override..ShowInTaskBar(True)
+Gui.Override..TitleBar(True)
+Gui.Override..Event(UnLoad,Override_UnLoad)
+Gui.Override.lblEnterPassword.Create(Label,"Please enter SUPERVSR password:",True,167,13,0,20,13,True,0,"Tahoma",8.25,,0,0)
+Gui.Override.lblEnterPassword.BorderStyle(0)
+Gui.Override.lblVerifyingLabel.Create(Label,"Password is incorrect, please try again.",True,189,13,0,22,63,True,0,"Tahoma",8.25,,0,0)
+Gui.Override.lblVerifyingLabel.BorderStyle(0)
+Gui.Override.lblVerifyingLabel.ForeColor(255)
+Gui.Override.txtPassword.Create(TextBox,"",True,108,20,0,20,35,True,0,"Tahoma",8.25,,1)
+Gui.Override.txtPassword.PasswordChar("*")
+Gui.Override.txtPassword.Event(KeyPressEnter,txtPassword_KeyPressEnter)
+Gui.Override.txtPassword.Event(LostFocus,txtPassword_LostFocus)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.sModifiedPriority.Declare(String)
+V.Global.iGlobalIndex.Declare(Long)
+V.Global.bCompleted.Declare(Boolean)
+V.Global.bFromUpdateCheck.Declare(Boolean)
+V.Global.bFromHook15880.Declare(Boolean)
+V.Global.bSheetComplete.Declare(Boolean)
+V.Global.bFromSFDC.Declare(Boolean)
+V.Global.bUpdatingMultiples.Declare(Boolean)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Developer: Angel Tudon
+'Customer: Nowak Machined Products
+'Ticket: https://www.gss-service.com/Calls/CallEditInternalOpen/1282666
+'Quote: 13703 - 0
+'This project will allow the creation of quality plan check sheets at the router sequence level. These check sheets will then be shown from the GUI when jobs associated with the router sequence are being worked on or updated by the shop floor users. 
+
+F.Intrinsic.Control.Try
+
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+F.ODBC.Connection!con.OpenCompanyConnection
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+	
+	'Set Script 1 button text in Router > Open screen
+	F.Intrinsic.Control.Case(11010)
+		F.Intrinsic.Control.If(V.Caller.Switches, =, "O")
+			V.Passed.000201.Set("Qual Plan")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000201, "LOCK", 1)
+			F.Intrinsic.Control.End
+		F.Intrinsic.Control.EndIf
+	
+	'Script 1 ("Qual Plan") button is clicked from router header screen
+	F.Intrinsic.Control.Case(11120)
+		'Check for a selected router and open form if so
+		F.Intrinsic.Control.If(V.Passed.000014, =, "")
+			F.Intrinsic.UI.Msgbox("Please select a router.", "No Router Selected")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(LoadQualPlanForm)
+		F.Intrinsic.Control.EndIf
+		
+	'Set Script 2 button text in Online GUI
+	F.Intrinsic.Control.Case(15790)
+		V.Passed.000049.Set("QC Check Sheet")
+		
+	'Script 2 ("Qual PLan") button is clicked from jobs in process screen in online GUI
+	F.Intrinsic.Control.Case(15834)
+		F.Intrinsic.Control.CallSub(LoadQualCheckForm)
+		
+	'Check that quality plan has been completed on WO update pre process hook
+	F.Intrinsic.Control.Case(15880)
+		F.Intrinsic.Control.CallSub(CheckPlanCompletion)
+		
+	'Check that quality plan has been complete when updating multiple WOs at a time
+	F.Intrinsic.Control.Case(15915)
+		V.Global.bUpdatingMultiples.Set(1)
+		F.Intrinsic.Control.CallSub(CheckPlanCompletion)
+		
+	'Set Script 2 button text in new Online GUI SFDC
+	F.Intrinsic.Control.Case(50500)
+		V.Local.sScriptBtns.Declare(String)
+		F.Intrinsic.String.Split(v.Passed.MainFormView-windowsUIButtonPanel-4, "|~|", v.Local.sScriptBtns)
+		v.Local.sScriptBtns(1).Set("QC Check Sheets")
+		F.Intrinsic.String.Join(v.Local.sScriptBtns, "|~|", v.Local.sScriptBtns)
+		v.Passed.MainFormView-windowsUIButtonPanel-4.Set(v.Local.sScriptBtns)
+	
+	'Click QC Check Sheets from new SFDC GUI
+	F.Intrinsic.Control.Case(50503)
+		V.Global.bFromSFDC.Set(1)
+		F.Intrinsic.Control.CallSub(LoadQualCheckForm)
+	
+	'Update WO from new SFDC GUI
+	F.Intrinsic.Control.Case(50620)
+		F.Intrinsic.Control.CallSub(UpdateWOFromSFDC)
+	
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.UpdateWOFromSFDC.Start
+F.Intrinsic.Control.Try
+
+V.Local.iRow.Declare(Long)
+V.Local.sBDF.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sSeq.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSheetNumber.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sMissingPlanWOs.Declare(String)
+V.Local.sMsg.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sRouterSeq.Declare(String)
+V.Local.bMissing.Declare(Boolean)
+
+F.Intrinsic.BDF.Load("UpdateJobsView-gvWOOperations-bdf", "UpdateJobsView-gvWOOperations-bdf")
+F.Intrinsic.BDF.ReadRowCount("UpdateJobsView-gvWOOperations-bdf", v.Local.iRow)
+F.Intrinsic.Math.Sub(v.Local.iRow, 1, v.Local.iRow)
+
+'Cycle through BDF to capture selection(s) and check their quality plan sheet completion before allowing update
+F.Intrinsic.Control.For(v.Local.i, 0, v.Local.iRow, 1)
+	V.Local.bMissing.Set(0)
+	F.Intrinsic.BDF.ReadRow("UpdateJobsView-gvWOOperations-bdf", v.Local.i, v.Local.sBDF)
+	F.Intrinsic.String.Split(v.Local.sBDF, "|~|", v.Local.sBDF)
+	V.Local.sSeq.Set(V.Local.sBDF(1))
+	F.Intrinsic.String.Split(V.Local.sBDF(0), "-", V.Local.sBDF)
+	V.Local.sWO.Set(V.Local.sBDF(0))
+	V.Local.sSuffix.Set(V.Local.sBDF(1))
+	
+	'Check quality plans exists for router/seq combo attached to job
+	F.Intrinsic.String.Build("Select RTRIM(ROUTER) ROUTER, RTRIM(ROUTER_SEQ) ROUTER_SEQ from JOB_OPERATIONS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSql)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+	F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+	V.Local.sRouter.Set(V.Local.sRet(0))
+	V.Local.sRouterSeq.Set(V.Local.sRet(1))
+	
+	F.Intrinsic.String.Build("Select KEY_SEQUENCE from GCG_6906_QUAL_PLAN where ROUTER = '{0}' and SEQUENCE = '{1}'", V.Local.sRouter, V.Local.sRouterSeq, V.Local.sSql)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+		'Find current sheet number
+		F.Intrinsic.String.Build("Select top 1 RTRIM(SHEET_NO) from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' order by SHEET_NO desc", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSql)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sSheetNumber)
+		
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+			'Check for completion of all records in quality plan attached to WO router.
+			F.Intrinsic.String.Build("Select COMPLETED from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}' and COMPLETED = 0", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSheetNumber, V.Local.sSql)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+			
+			F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+				V.Local.bMissing.Set(1)
+			F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.Else
+			V.Local.bMissing.Set(1)
+			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'If current job/seq has missing quality check records add it to list
+	F.Intrinsic.Control.If(V.Local.bMissing, =, True)
+		F.Intrinsic.Control.If(V.Local.sMissingPlanWOs, =, "")
+			F.Intrinsic.String.Build("{0}{1}-{2} {3}",V.Ambient.Tab, V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sMissingPlanWOs)
+			
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}{1}{2}{3}-{4} {5}", V.Local.sMissingPlanWOs, V.Ambient.NewLine, V.Ambient.Tab,  V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sMissingPlanWOs)
+			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Next(V.Local.i)
+
+'If any jobs exist in the sMissingPlanWOs list, display them and do not allow the job update
+F.Intrinsic.Control.If(V.Local.sMissingPlanWOs, !=, "")
+	F.Intrinsic.String.Build("The following job sequence(s) have missing quality check sheet records:{0}{1}{2}Please complete before updating", V.Ambient.NewLine, V.Local.sMissingPlanWOs, V.Ambient.NewLine, V.Local.sMsg)
+'	F.Intrinsic.UI.Msgbox(V.Local.sMsg, "Incomplete Quality Plan Records")
+	F.Intrinsic.UI.MsgBoxExt("Incomplete Quality Plan", V.Local.sMsg, "24*!*OK*!*OVERRIDE", 400, 200)
+	
+	'Prompt for override info if OVERRIDE selection is made
+	F.Intrinsic.Control.If(V.Ambient.AltBoxClick, =, 4)
+		F.Intrinsic.Control.CallSub(Override)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	V.Passed.777777.Set(1)
+	
+F.Intrinsic.Control.Else
+	'If job(s) being updated have complete quality record plans, allow the job update to continue as normal
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.UpdateWOFromSFDC.End
+
+Program.Sub.Override.Start
+GUI.Override.txtPassword.Text("")
+GUI.Override.lblVerifyingLabel.Visible(False)
+GUI.Override..Show
+
+Program.Sub.Override.End
+
+Program.Sub.CaptureSFDCValues.Start
+F.Intrinsic.Control.Try
+
+V.Local.iRow.Declare(Long)
+V.Local.sBDF.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sSeq.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sEmpID.Declare(String)
+V.Local.sEmpName.Declare(String)
+
+'Open BDF and cycle through job information for all selected jobs (only one selection is allowed, if more than one is selected the first selected in the list will be used)
+F.Intrinsic.BDF.Load("MainFormView-gridViewOperations-bdf", "MainFormView-gridViewOperations-bdf")
+F.Intrinsic.BDF.ReadRowCount("MainFormView-gridViewOperations-bdf",v.Local.iRow)
+F.Intrinsic.Math.Sub(v.Local.iRow,1,v.Local.iRow)
+
+'Loop through BDF and grab first selected job/suffix/seq record
+F.Intrinsic.Control.For(v.Local.i,0,v.Local.iRow,1)
+	F.Intrinsic.BDF.ReadRow("MainFormView-gridViewOperations-bdf",v.Local.i,v.Local.sBDF)
+	F.Intrinsic.String.Split(v.Local.sBDF,"|~|",v.Local.sBDF)
+	
+	'If current record is selected grab all job values
+    F.Intrinsic.Control.If(V.Local.sBDF(0), =, True)
+    	V.Local.sSeq.Set(V.Local.sBDF(3))
+    	F.Intrinsic.String.Split(V.Local.sBDF(2), "-", V.Local.sBDF)
+    	V.Local.sWO.Set(V.Local.sBDF(0))
+    	V.Local.sSuffix.Set(V.Local.sBDF(1))
+    	F.Intrinsic.Control.ExitFor(V.Local.i)
+    	
+    F.Intrinsic.Control.EndIf
+    
+F.Intrinsic.Control.Next(v.Local.i)
+
+'If no job/seq was selected, inform user and end
+F.Intrinsic.Control.If(V.Local.sWO, =, "")
+	F.Intrinsic.UI.Msgbox("Please select a job before opening quality check sheet", "No Job Selected")
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.EndIf
+
+'Grab employee info
+V.Local.sEmpID.Set(V.Passed.Employee)
+V.Local.sEmpName.Set(V.Passed.EmployeeName)
+
+F.Intrinsic.Variable.AddRV("WO", V.Local.sWO, "SUFFIX", V.Local.sSuffix, "SEQ", V.Local.sSeq, "EmployeeID", V.Local.sEmpID, "EmployeeName", V.Local.sEmpName)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.CaptureSFDCValues.End
+
+Program.Sub.LoadQualCheckForm.Start
+F.Intrinsic.Control.Try
+
+'V.Passed.000001 = Employee Name
+'V.Passed.000002 = Employee No.
+'V.Passed.009990 = WO
+'V.Passed.009991 = Suffix
+'V.Passed.009992 = Sequence
+V.Local.sSql.Declare(String)
+V.Local.sWO.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sEmpID.Declare(String)
+V.Local.sEmpName.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sRouterSeq.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSqlCheck.Declare(String)
+V.Local.sShowPart.Declare(String)
+
+'Check if script is being called from new GUI (SFDC) and set values accordingly
+F.Intrinsic.Control.If(V.Global.bFromSFDC, =, True)
+	'Call Sub to capture values from new SFDC
+	F.Intrinsic.Control.CallSub(CaptureSFDCValues)
+	V.Local.sWO.Set(V.Args.WO)
+	V.Local.sSuffix.Set(V.Args.SUFFIX)
+	V.Local.sSeq.Set(V.Args.SEQ)
+	V.Local.sEmpID.Set(V.Args.EmployeeID)
+	V.Local.sEmpName.Set(V.Args.EmployeeName)
+
+'Else capture values from old Online GUI
+F.Intrinsic.Control.Else
+	'Capture WO and Employee values
+	V.Local.sWO.Set(V.Passed.009990)
+	V.Local.sSuffix.Set(V.Passed.009991)
+	V.Local.sSeq.Set(V.Passed.009992)
+	
+	'Hook 15880 changes the passed variable for empID and employee name
+	F.Intrinsic.Control.If(V.Global.bFromHook15880)
+		V.Local.sEmpID.Set(V.Passed.009993)
+		V.Local.sEmpName.Set(V.Passed.009994)
+		
+	F.Intrinsic.Control.Else
+		V.Local.sEmpID.Set(V.Passed.000002)
+		V.Local.sEmpName.Set(V.Passed.000001)
+		
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndIf
+
+'Set all passed values to form labels
+GUI.QualCheck.lblEmpNameText.Text(V.Local.sEmpName)
+GUI.QualCheck.lblEmpNoText.Text(V.Local.sEmpID)
+GUI.QualCheck.lblWOText.Text(V.Local.sWO)
+GUI.QualCheck.lblSuffixText.Text(V.Local.sSuffix)
+GUI.QualCheck.lblSEQText.Text(V.Local.sSeq)
+'Get part attached to job to show on form
+F.Intrinsic.String.Build("Select PART from JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sShowPart)
+GUI.QualCheck.lblPartText.Text(V.Local.sShowPart)
+
+F.Intrinsic.Control.CallSub(CheckSheetNumber, "WO", V.Local.sWO, "SUFFIX", V.Local.sSuffix, "SEQ", V.Local.sSeq)
+
+'Capture Router/Sequence attached to WO/Suffix/Seq
+F.Intrinsic.String.Build("Select RTRIM(ROUTER) ROUTER, RTRIM(ROUTER_SEQ) ROUTER_SEQ from JOB_OPERATIONS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+V.Local.sRouter.Set(V.Local.sRet(0))
+V.Local.sRouterSeq.Set(V.Local.sRet(1))
+
+'Grab records from corresponding quality plan
+F.Intrinsic.String.Build("Select RTRIM(PASS_FAIL) PASS_FAIL_PLAN, RTRIM(PRIORITY) PRIORITY, RTRIM(KEY_SEQUENCE) KEY_SEQUENCE, RTRIM(DIMENSION) DIMENSION, RTRIM(METHOD) METHOD, RTRIM(PROCESS_DIM_DESC) PROCESS_DIM_DESC,  RTRIM(FREQUENCY) FREQUENCY, RTRIM(PROCESS_DIM) PROCESS_DIM, RTRIM(CRITERIA_MIN) CRITERIA_MIN, RTRIM(CRITERIA_MAX) CRITERIA_MAX, RTRIM(GAUGE_NO) GAUGE_NO from GCG_6906_QUAL_PLAN where ROUTER = '{0}' and SEQUENCE = '{1}' order by PRIORITY", V.Local.sRouter, V.Local.sRouterSeq, V.Local.sSql)
+F.Data.Datatable.CreateFromSQL("dtQualPlanCheck", "con", V.Local.sSql, True)
+
+'End program if no plan exists for selected job sequence
+F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck.RowCount, =, 0)
+	F.Intrinsic.UI.Msgbox("No quality plan exists for selected job sequence", "No Quality Plan")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'Add columns for measurement input, pass/fail values, and sheet checks
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "MEASUREMENT", "Float")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "PASS_FAIL", "String")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "STATION", "String")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "COMP_SHEET", "Boolean")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "SHEET_NO", "String")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "OVERRIDE", "Boolean")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "ZERO_VALUE", "Boolean")
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "ZERO_VALUE", 0)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "SHEET_NO", V.Args.SheetNumber)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "COMP_SHEET", 0)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "OVERRIDE", 0)
+
+'Set current sheet text value
+GUI.QualCheck.lblCurrentSheetText.Text(V.Args.SheetNumber)
+
+'Create dictionary to fill in existing measurements 
+F.Intrinsic.String.Build("Select RTRIM(KEY_SEQUENCE) KEY_SEQUENCE, MEASUREMENT from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Args.SheetNumber, V.Local.sSql)
+F.Data.Dictionary.CreateFromSQL("dictMeasurements", "con", V.Local.sSql)
+F.Data.Dictionary.SetDefaultReturn("dictMeasurements", 0.0000)
+F.Data.Datatable.FillFromDictionary("dtQualPlanCheck", "dictMeasurements", "KEY_SEQUENCE", "MEASUREMENT")
+
+'Create dictionary to fill in existing pass/fail checks
+F.Intrinsic.String.Build("Select RTRIM(KEY_SEQUENCE) KEY_SEQUENCE, PASS_FAIL from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Args.SheetNumber, V.Local.sSql)
+F.Data.Dictionary.CreateFromSQL("dictPassFailCheck", "con", V.Local.sSql)
+F.Data.Dictionary.SetDefaultReturn("dictPassFailCheck", "")
+F.Data.Datatable.FillFromDictionary("dtQualPlanCheck", "dictPassFailCheck", "KEY_SEQUENCE", "PASS_FAIL")
+
+F.Intrinsic.String.Build("Select RTRIM(KEY_SEQUENCE) KEY_SEQUENCE, ZERO_VALUE from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Args.SheetNumber, V.Local.sSql)
+F.Data.Dictionary.CreateFromSQL("dictZeroVal", "con", V.Local.sSql)
+F.Data.Dictionary.SetDefaultReturn("dictZeroVal", 0)
+F.Data.Datatable.FillFromDictionary("dtQualPlanCheck", "dictZeroVal", "KEY_SEQUENCE", "ZERO_VALUE")
+
+'Create dictionary to fill in existing stations
+F.Intrinsic.String.Build("Select RTRIM(KEY_SEQUENCE) KEY_SEQUENCE, STATION from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Args.SheetNumber, V.Local.sSql)
+'Ensure dictionary will not be empty before filling table to avoid data type conflicts
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sSqlCheck)
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+	F.Data.Dictionary.CreateFromSQL("dictStations", "con", V.Local.sSql)
+	F.Data.Dictionary.SetDefaultReturn("dictStations", "")
+	F.Data.Datatable.FillFromDictionary("dtQualPlanCheck", "dictStations", "KEY_SEQUENCE", "STATION")
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(FormatQualCheckForm)
+F.Intrinsic.Control.CallSub(PopulateStaticValues)
+GUI.QualCheck..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadQualCheckForm.End
+
+Program.Sub.PopulateStaticValues.Start
+F.Intrinsic.Control.Try
+
+'Set current date and time to PSQL format
+V.Local.sDate.Declare(String)
+V.Local.sTime.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.bOutOfRange.Declare(Boolean)
+
+F.Intrinsic.String.Format(V.Ambient.Date, "YYYY-MM-DD", V.Local.sDate)
+F.Intrinsic.String.Format(V.Ambient.Time, "HH:MM:SS", V.Local.sTime)
+
+'Add all needed data columns to dt
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "JOB", "String")
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "SUFFIX", "String")
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "SEQ", "String")
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "DATE", "String")
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "TIME", "String")
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "EMPLOYEE_NO", "String")
+F.Data.DataTable.AddColumn("dtQualPlanCheck", "EMPLOYEE_NAME", "String")
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "COMPLETED", "Boolean")
+'Set all values
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "JOB", V.Screen.QualCheck!lblWOText.Text)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "SUFFIX", V.Screen.QualCheck!lblSuffixText.Text)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "SEQ", V.Screen.QualCheck!lblSEQText.Text)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "DATE", V.Local.sDate)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "TIME", V.Local.sTime)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "EMPLOYEE_NO", V.Screen.QualCheck!lblEmpNoText.Text)
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "EMPLOYEE_NAME", V.Screen.QualCheck!lblEmpNameText.Text)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.PopulateStaticValues.End
+
+Program.Sub.FormatQualCheckForm.Start
+F.Intrinsic.Control.Try
+
+V.Local.iVisibleIndex.Declare(Long)
+
+GUI.QualCheck.GSCG_QualCheck.AddGridviewFromDatatable("gvQualPlanCheck", "dtQualPlanCheck")
+
+'Set gridview properites
+GUI.QualCheck.GSCG_QualCheck.SetGridviewProperty("gvQualPlanCheck", V.Enum.GridViewPropertyNames!ColumnAutoWidth, True)
+GUI.QualCheck.GSCG_QualCheck.SetGridviewProperty("gvQualPlanCheck", V.Enum.GridViewPropertyNames!ShowDetailTabs, False)
+GUI.QualCheck.GSCG_QualCheck.SetGridviewProperty("gvQualPlanCheck", V.Enum.GridViewPropertyNames!ShowDetailTabs, False)
+
+'Bold table headers
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "HeaderFontBold", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "HeaderFontBold", True)
+
+'Set column captions
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "Caption", "Balloon #")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "Caption", "Method")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "Caption", "Process Dim Desc")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "Caption", "Process Dimension")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "Caption", "Min")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "Caption", "Max")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "Caption", "Measurement")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "Caption", "P/F")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "Caption", "Station")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "Caption", "Gauge #")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "Caption", "0 Value?")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "Caption", "Frequency")
+
+'Hide columns uneeded by user
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PRIORITY", "Visible", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "KEY_SEQUENCE", "Visible", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL_PLAN", "Visible", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "COMP_SHEET", "Visible", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "SHEET_NO", "Visible", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "OVERRIDE", "Visible", False)
+
+'Set dropdown for pass fail column
+Gui.QualCheck.GSCG_QualCheck.ColumnEdit("gvQualPlanCheck","PASS_FAIL","Dropdownlist","*!*P*!*F")
+
+'Set allow show hide options
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PRIORITY", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "KEY_SEQUENCE", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL_PLAN", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "COMP_SHEET", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "SHEET_NO", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "OVERRIDE", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "AllowShowHide", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "AllowShowHide", False)
+
+'Set allow move options
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "AllowMove", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "AllowMove", False)
+
+'Set allow sort options
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "AllowSort", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "AllowSort", False)
+
+'Set allow filter options
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "AllowFilter", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "AllowFilter", False)
+
+'Set column widths
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "Width", 120)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "MinWidth", 120)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "Width", 120)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "MinWidth", 100)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "Width", 120)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "MinWidth", 100)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "MinWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "MaxWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "MaxWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "MinWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "MaxWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "MinWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "MaxWidth", 90)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "MinWidth", 90)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "MaxWidth", 60)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "MinWidth", 60)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "MaxWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "MinWidth", 70)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "MinWidth", 90)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "Width", 100)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "MinWidth", 100)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "Width", 110)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "MinWidth", 75)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "MaxWidth", 75)
+
+'Set column alignment
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "CellHAlignment", "Far")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "CellHAlignment", "Far")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "CellHAlignment", "Far")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "CellHAlignment", "Far")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "CellHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "CellHAlignment", "Center")
+
+'Set column header alignment
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "HeaderHAlignment", "Center")
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", "HeaderHAlignment", "Center")
+
+'Format numeric values
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "DisplayCustomNumeric", "######0.000")
+
+'Set allow edit properties
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "AllowEdit", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "AllowEdit", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "AllowEdit", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "AllowEdit", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "AllowEdit", False)
+
+'Set read only properties
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "ReadOnly", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", "ReadOnly", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", "ReadOnly", False)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", "ReadOnly", True)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", "ReadOnly", False)
+
+'Set visible index on grid
+V.Local.iVisibleIndex.Set(-1)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM_DESC", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "DIMENSION", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "METHOD", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "GAUGE_NO", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "FREQUENCY", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PROCESS_DIM", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MIN", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "CRITERIA_MAX", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "ZERO_VALUE", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "PASS_FAIL", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "STATION", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+
+'Display custom numeric values
+GUI.QualCheck.GSCG_QualCheck.SetColumnProperty("gvQualPlanCheck", "MEASUREMENT", "DisplayCustomNumeric", "########0.0000")
+
+
+'Lock MEASUREMENT or PASS_FAIL column according to PASS_FAIL_PLAN flag on quality plan table
+V.Local.iCnt.Declare(Long)
+V.Local.MIndex.Declare(Long)
+V.Local.PFIndex.Declare(Long)
+V.Local.SIndex.Declare(Long)
+V.Local.0ValueIndex.Declare(Long)
+
+'Get MEASUREMENT and PASS_FAIL column indexes
+GUI.QualCheck.GSCG_QualCheck.GetColumnIndexByName("gvQualPlanCheck", "MEASUREMENT", V.Local.MIndex)
+GUI.QualCheck.GSCG_QualCheck.GetColumnIndexByName("gvQualPlanCheck", "PASS_FAIL", V.Local.PFIndex)
+GUI.QualCheck.GSCG_QualCheck.GetColumnIndexByName("gvQualPlanCheck", "STATION", V.Local.SIndex)
+
+F.Intrinsic.Control.For(V.Local.iCnt, 0, V.DataTable.dtQualPlanCheck.RowCount--, 1)
+	F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck(V.local.iCnt).PASS_FAIL_PLAN!FieldVal , =, 0)
+        GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.MIndex, V.Local.iCnt, "BackColor", "LightYellow")
+        
+        'Check for zero value check to determine lock state of Measurement column
+        F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck(V.Local.iCnt).ZERO_VALUE!FieldVal, !=, True)
+        	GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck",V.Local.MIndex, V.Local.iCnt, "Locked", False)
+        F.Intrinsic.Control.Else
+        	GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck",V.Local.MIndex, V.Local.iCnt, "Locked", True)
+        	
+        F.Intrinsic.Control.EndIf
+        
+        GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.MIndex, V.Local.iCnt, "HAlignment", "Far")
+        GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck", V.Local.PFIndex, V.Local.iCnt, "Locked", True) 
+           
+	F.Intrinsic.Control.Else
+        GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.PFIndex, V.Local.iCnt, "BackColor", "LightYellow")
+        GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck", V.Local.PFIndex, V.Local.iCnt, "Locked", False)
+        GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck", V.Local.MIndex, V.Local.iCnt, "Locked", True)
+            
+	F.Intrinsic.Control.EndIf
+	
+	GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.SIndex, V.Local.iCnt, "BackColor", "LightYellow")
+    
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+GUI.QualCheck.GSCG_QualCheck.MainView("gvQualPlanCheck")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatQualCheckForm.End
+
+Program.Sub.CheckSheetNumber.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sSheetNumber.Declare(String)
+V.Local.sRet.Declare(String)
+
+'Check for top existing sheet number
+F.Intrinsic.String.Build("Select top 1 CAST(RTRIM(SHEET_NO) as int) SHEET_NO from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' order by SHEET_NO desc", V.Args.WO, V.Args.SUFFIX, V.Args.SEQ, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sSheetNumber)
+
+'If no sheets exist for JOB/SUFFIX/SEQ set to 1
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	V.Local.sSheetNumber.Set("1")
+	
+F.Intrinsic.Control.Else
+	'Check if current top sheet has been completed
+	F.Intrinsic.String.Build("Select COMP_SHEET from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}' and COMP_SHEET = 0", V.Args.WO, V.Args.SUFFIX, V.Args.SEQ, V.Local.sSheetNumber, V.Local.sSql)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+	
+		'If return is blank, top sheet has been completed and a new must be started
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.Math.Add(V.Local.sSheetNumber, 1, V.Local.sSheetNumber)
+			
+		F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.AddRV("SheetNumber", V.Local.sSheetNumber)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckSheetNumber.End
+
+Program.Sub.LoadQualPlanForm.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sRev.Declare(String)
+
+'Grab current router (and REV if one exists) number and set to field
+V.Local.sRouter.Set(V.Passed.000014)
+V.Local.sRev.Set(V.Passed.000015)
+F.Intrinsic.String.RPad(V.Local.sRouter.Trim, " ", 17, V.Local.sRouter)
+F.Intrinsic.String.Build("{0}{1}", V.Local.sRouter, V.Local.sRev, V.Local.sRouter)
+GUI.QualPlanForm.txt_Router.Text(V.Local.sRouter.Trim)
+V.Local.sSeq.Set(V.Screen.QualPlanForm!ddl_Sequences.Text)
+
+'Ensure datatable does not exist before recreating
+F.Intrinsic.Control.If(V.DataTable.dtRouterPlan.Exists)
+	F.Data.DataTable.Close("dtRouterPlan")
+F.Intrinsic.Control.EndIf
+
+'Populate existing quality plans for router if any exist
+F.Intrinsic.String.Build("Select RTRIM(PRIORITY) PRIORITY, RTRIM(SEQUENCE) SEQUENCE, RTRIM(KEY_SEQUENCE) KEY_SEQUENCE, RTRIM(DIMENSION) DIMENSION, RTRIM(FREQUENCY) FREQUENCY, RTRIM(METHOD) METHOD, IF(PASS_FAIL = 1, 'YES', 'NO') PASS_FAIL, RTRIM(PROCESS_DIM) PROCESS_DIM,  RTRIM(PROCESS_DIM_DESC) PROCESS_DIM_DESC, RTRIM(UOM) UOM, RTRIM(CRITERIA_MIN) CRITERIA_MIN, RTRIM(CRITERIA_MAX) CRITERIA_MAX, RTRIM(GAUGE_NO) GAUGE_NO from GCG_6906_QUAL_PLAN where RTRIM(ROUTER) = '{0}' and SEQUENCE = '{1}' order by PRIORITY", V.Local.sRouter, V.Local.sSeq, V.Local.sSql)
+F.Data.DataTable.CreateFromSQL("dtRouterPlan", "con", V.Local.sSql, True)
+
+'Add columns for priority increase/decrease and edit buttons
+F.Data.DataTable.AddColumn("dtRouterPlan", "UP", "String")
+F.Data.DataTable.AddColumn("dtRouterPlan", "DOWN", "String")
+F.Data.DataTable.AddColumn("dtRouterPlan", "EDIT", "String")
+
+'Clear items from dropdownlist to avoid duplication and repopulate with LMO = L sequences
+GUI.QualPlanForm.ddl_Sequences.ClearItems
+F.Intrinsic.String.Build("select LINE_ROUTER as DDINDEX, LINE_ROUTER as Description2 from V_ROUTER_LINE where RTRIM(ROUTER) = '{0}' and LMO = 'L' order by DDINDEX", V.Local.sRouter, V.Local.sSql)
+F.Data.Dictionary.CreateFromSQL("dictSeqs", "con", V.Local.sSql)
+GUI.QualPlanForm.ddl_Sequences.AddItems("Dictionary", "dictSeqs")
+F.Data.Dictionary.Close("dictSeqs")
+
+'Call sub to format gridview and show form
+F.Intrinsic.Control.CallSub(FormatGridView)
+GUI.QualPlanForm..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadQualPlanForm.End
+
+Program.Sub.FormatGridView.Start
+F.Intrinsic.Control.Try
+
+V.Local.iVisibleIndex.Declare(Long)
+
+'Load datatable into gridview and start formatting
+GUI.QualPlanForm.GSGC_QualityPlan.AddGridviewFromDatatable("gvRouterPlan", "dtRouterPlan")
+
+'Format GridView properties
+GUI.QualPlanForm.GSGC_QualityPlan.SetGridviewProperty("gvRouterPlan", V.Enum.GridViewPropertyNames!ColumnAutoWidth, True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetGridviewProperty("gvRouterPlan", V.Enum.GridViewPropertyNames!ShowDetailTabs, False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetGridviewProperty("gvRouterPlan", V.Enum.GridViewPropertyNames!ShowDetailTabs, False)
+
+'Ensure grid is sorted by PRIORITY
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "SortOrder", "Ascending")
+
+'Bold Table Headers
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "HeaderFontBold", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "HeaderFontBold", True)
+
+'Set column captions
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", V.Enum.ColumnPropertyNames!Caption, "Sequence")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", V.Enum.ColumnPropertyNames!Caption, "Balloon #")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", V.Enum.ColumnPropertyNames!Caption, "Frequency")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", V.Enum.ColumnPropertyNames!Caption, "Method")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", V.Enum.ColumnPropertyNames!Caption, "Pass/Fail")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", V.Enum.ColumnPropertyNames!Caption, "Process Dim")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", V.Enum.ColumnPropertyNames!Caption, "Process Dim Desc")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", V.Enum.ColumnPropertyNames!Caption, "UM")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", V.Enum.ColumnPropertyNames!Caption, "Min")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", V.Enum.ColumnPropertyNames!Caption, "Max")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", V.Enum.ColumnPropertyNames!Caption, "Priority")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", V.Enum.ColumnPropertyNames!Caption, "Gauge #")
+
+'Hide Key_Sequence column
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "KEY_SEQUENCE", "Visible", False)
+
+'Set allow show/hide options
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "AllowShowHide", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "AllowShowHide", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "AllowShowHide", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "AllowShowHide", False)
+
+'Set allow move options
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "AllowMove", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "AllowMove", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "AllowMove", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "AllowMove", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "AllowMove", False)
+
+'Set allow sort options
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "AllowSort", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "AllowSort", False)
+
+'Set allow filter options
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "AllowFilter", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "AllowFilter", False)
+
+'Set column alginment
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "CellHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "CellHAlignment", "Center")
+
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "HeaderHAlignment", "Center")
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "HeaderHAlignment", "Center")
+
+'Set caption show
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "ShowCaption", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "ShowCaption", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "ShowCaption", False)
+
+'Set column widths
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "MinWidth", 75)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "MaxWidth", 75)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "Width", 50)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", "MinWidth", 35)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "MinWidth", 40)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "Width", 95)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "MinWidth", 65)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "Width", 100)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "MinWidth", 50)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "MinWidth", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "Width", 50)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "MinWidth", 35)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "MaxWidth", 65)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "MinWidth", 65)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "Width", 100)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "Width", 100)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "MinWidth", 65)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "MinWidth", 35)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "MaxWidth", 40)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "MinWidth", 35)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "MaxWidth", 50)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "MinWidth", 35)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "MaxWidth", 50)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "MinWidth", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "Width", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "MaxWidth", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "MinWidth", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "Width", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "MaxWidth", 25)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "MinWidth", 50)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "MaxWidth", 50)
+
+'Set readonly columns
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "ReadOnly", True)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "ReadOnly", True)
+
+'Set AllowEdit column values
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", "AllowEdit", False)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", "AllowEdit", False)
+
+'Set visible index on grid
+V.Local.iVisibleIndex.Set(-1)
+
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "SEQUENCE", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DOWN", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UP", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PRIORITY", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM_DESC", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "DIMENSION", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "METHOD", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "FREQUENCY", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "GAUGE_NO", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PASS_FAIL", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "PROCESS_DIM", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MIN", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "CRITERIA_MAX", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "UOM", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+GUI.QualPlanForm.GSGC_QualityPlan.SetColumnProperty("gvRouterPlan", "EDIT", V.Enum.ColumnPropertyNames!VisibleIndex,V.Local.iVisibleIndex.++)
+
+'Set column buttons
+GUI.QualPlanForm.GSGC_QualityPlan.ColumnEdit("gvRouterPlan", "DOWN", "EditorButton", "-")
+GUI.QualPlanForm.GSGC_QualityPlan.ColumnEdit("gvRouterPlan", "UP", "EditorButton", "+")
+GUI.QualPlanForm.GSGC_QualityPlan.ColumnEdit("gvRouterPlan", "EDIT", "EditorButton", "EDIT")
+
+GUI.QualPlanForm.GSGC_QualityPlan.MainView("gvRouterPlan")
+F.Intrinsic.Control.CallSub(Deserialize, "Form", "QualPlanForm", "GridControl", "GSGC_QualityPlan", "GridView", "gvRouterPlan", "REGID", "6906")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatGridView.End
+
+Program.Sub.CheckPlanCompletion.Start
+F.Intrinsic.Control.Try
+
+'V.Passed.000001 = Employee Name
+'V.Passed.000002 = Employee No.
+'V.Passed.009990 = WO
+'V.Passed.009991 = Suffix
+'V.Passed.009992 = Sequence
+V.Local.sWO.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSheetNumber.Declare(String)
+V.Local.bMissing.Declare(Boolean)
+V.Local.sRouter.Declare(String)
+V.Local.sRouterSeq.Declare(String)
+V.Local.sMsg.Declare(String)
+
+'Capture passed WO values
+V.Local.sWO.Set(V.Passed.009990)
+V.Local.sSuffix.Set(V.Passed.009991)
+V.Local.sSeq.Set(V.Passed.009992)
+
+'Check quality plans exists for router/seq combo attached to job
+F.Intrinsic.String.Build("Select RTRIM(ROUTER) ROUTER, RTRIM(ROUTER_SEQ) ROUTER_SEQ from JOB_OPERATIONS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}'", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+V.Local.sRouter.Set(V.Local.sRet(0))
+V.Local.sRouterSeq.Set(V.Local.sRet(1))
+
+F.Intrinsic.String.Build("Select KEY_SEQUENCE from GCG_6906_QUAL_PLAN where ROUTER = '{0}' and SEQUENCE = '{1}'", V.Local.sRouter, V.Local.sRouterSeq, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+	'Find current sheet number
+	F.Intrinsic.String.Build("Select top 1 RTRIM(SHEET_NO) from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' order by SHEET_NO desc", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSql)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sSheetNumber)
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+		'Check for completion of all records in quality plan attached to WO router.
+		F.Intrinsic.String.Build("Select COMPLETED from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and SHEET_NO = '{3}' and COMPLETED = 0", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Local.sSheetNumber, V.Local.sSql)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+		
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+			V.Local.bMissing.Set(1)
+			
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.Else
+		V.Local.bMissing.Set(1)
+		
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+		
+'Check for no return to allow WO update process to continue, otherwise notify user
+F.Intrinsic.Control.If(V.Local.bMissing, !=, True)
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Job {0}-{1} {2} has missing quality plan records.{3}Please complete before updating.", V.Local.sWO, V.Local.sSuffix, V.Local.sSeq, V.Ambient.NewLine, V.Local.sMsg)
+	F.Intrinsic.UI.MsgBoxExt("Incomplete Quality Plan", V.Local.sMsg, "24*!*OK*!*OVERRIDE", 400, 150)
+	
+	'MsgBoxExt Returns: OK - 3, OVERRIDE - 4, Close MsgBox - -1
+	F.Intrinsic.Control.If(V.Ambient.AltBoxClick, =, 4)
+		F.Intrinsic.Control.CallSub(Override)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'If updating multiple jobs at once and there are missing quality records simply end the program without showing form for each
+	F.Intrinsic.Control.If(V.Global.bUpdatingMultiples)
+		V.Passed.777777.Set(1)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndIf
+	
+	'Update V.Local.bFromUpdateCheck to true so the form unload recognizes this as a pre WO update check
+	V.Global.bFromUpdateCheck.Set(1)
+	'Set boolean b15834 to true to recognize correct passed variables on LoadQualCheckForm sub
+	V.Global.bFromHook15880.Set(1)
+	F.Intrinsic.Control.CallSub(LoadQualCheckForm)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckPlanCompletion.End
+
+Program.Sub.QualPlanForm_UnLoad.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(Serialize, "Form", "QualPlanForm", "GridControl", "GSGC_QualityPlan", "GridView", "gvRouterPlan", "REGID", "6906")
+
+F.Intrinsic.Control.If(V.ODBC.con.Exists)
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.QualPlanForm_UnLoad.End
+
+Program.Sub.ddl_Sequences_Change.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.CallSub(RefreshGrid)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.ddl_Sequences_Change.End
+
+Program.Sub.cmdAddItem_Click.Start
+F.Intrinsic.Control.Try
+
+'Check for blank sequence selection and end if so
+F.Intrinsic.Control.If(V.Screen.QualPlanForm!ddl_Sequences.Text, =, "")
+	F.Intrinsic.UI.Msgbox("Please select a router sequence", "No Sequence")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Enable new record save button and hide delete button
+GUI.AddItemForm.cmdSaveNewItem.Caption("SAVE")
+GUI.AddItemForm.cmdDelete.Visible(False)
+
+'Populate UOM dropdownlist
+GUI.AddItemForm.ddlUOM.AddItem("IN")
+GUI.AddItemForm.ddlUOM.AddItem("MM")
+
+'Disable main form and show AddItemForm
+GUI.QualPlanForm..Enabled(False)
+GUI.AddItemForm..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddItem_Click.End
+
+Program.Sub.AddItemForm_UnLoad.Start
+F.Intrinsic.Control.Try
+
+'Disable and close AddItemForm
+GUI.QualPlanForm..Enabled(True)
+GUI.AddItemForm..Visible(False)
+'Clear all text fields
+GUI.AddItemForm.ddlUOM.ClearItems
+GUI.AddItemForm.ddlUOM.Text("")
+GUI.AddItemForm.txtDimension.Text("")
+GUI.AddItemForm.txtFrequency.Text("")
+GUI.AddItemForm.txtMethod.Text("")
+GUI.AddItemForm.chkPassFail.Value(0)
+GUI.AddItemForm.txtProcDimDesc.Text("")
+GUI.AddItemForm.txtProcDim.Text("")
+GUI.AddItemForm.txtMin.Text("")
+GUI.AddItemForm.txtMax.Text("")
+GUI.AddItemForm.txtGauge.Text("")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.AddItemForm_UnLoad.End
+
+Program.Sub.cmdSaveNewItem_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sDimension.Declare(String)
+V.Local.sFrequency.Declare(String)
+V.Local.sMethod.Declare(String)
+V.Local.sUOM.Declare(String)
+V.Local.bPassFail.Declare(Boolean)
+V.Local.sProcDimDesc.Declare(String)
+V.Local.fProcDim.Declare(Float)
+V.Local.fMin.Declare(Float)
+V.Local.fMax.Declare(Float)
+V.Local.sSql.Declare(String)
+V.Local.sBit.Declare(String)
+V.Local.lPriority.Declare(Long)
+V.Local.lNextPriority.Declare(Long)
+V.Local.sNewPriority.Declare(String)
+V.Local.sKeySeq.Declare(String)
+V.Local.sGaugeNo.Declare(String)
+
+V.Local.sDimension.Set(V.Screen.AddItemForm!txtDimension.Text)
+V.Local.sFrequency.Set(V.Screen.AddItemForm!txtFrequency.Text)
+V.Local.sMethod.Set(V.Screen.AddItemForm!txtMethod.Text)
+V.Local.sGaugeNo.Set(V.Screen.AddItemForm!txtGauge.Text)
+V.Local.sUOM.Set(V.Screen.AddItemForm!ddlOUM.Text)
+V.Local.bPassFail.Set(V.Screen.AddItemForm!chkPassFail.Value)
+V.Local.sProcDimDesc.Set(V.Screen.AddItemForm!txtProcDimDesc.Text)
+V.Local.fProcDim.Set(V.Screen.AddItemForm!txtProcDim.Text)
+V.Local.fMin.Set(V.Screen.AddItemForm!txtMin.Text)
+V.Local.fMax.Set(V.Screen.AddItemForm!txtMax.Text)
+
+'Format all numneric field values to 2 decimal spaces
+'F.Intrinsic.String.Format(V.Local.fFrequency, "#####0.00", V.Local.fFrequency)
+F.Intrinsic.String.Format(V.Local.fProcDim, "########0.0000", V.Local.fProcDim)
+F.Intrinsic.String.Format(V.Local.fMin, "########0.0000", V.Local.fMin)
+F.Intrinsic.String.Format(V.Local.fMax, "########0.0000", V.Local.fMax)
+
+'Convert pass/fail selection to bit value
+F.Intrinsic.Control.If(V.Local.bPassFail, =, False)
+	V.Local.sBit.Set(0)
+F.Intrinsic.Control.Else
+	V.Local.sBit.Set(1)
+F.Intrinsic.Control.EndIf
+
+'Check for missing required fields
+F.Intrinsic.Control.If(V.Local.sDimension, =, "", OR, V.Local.sFrequency, =, "", V.Local.sMethod, =, "", V.Local.sUOM, =, "")
+	F.Intrinsic.UI.Msgbox("One or more required fields are blank", "Incomplete Plan Form")
+	F.Intrinsic.Control.ExitSub
+'If record is not checked for pass fail, check for missing required fields
+F.Intrinsic.Control.ElseIf(V.Local.bPassFail, =, False)
+	F.Intrinsic.Control.If(V.Screen.AddItemForm!txtProcDim.Text, =, "", OR, V.Screen.AddItemForm!txtMin.Text, =, "", V.Screen.AddItemForm!txtMax.Text, =, "")
+			F.Intrinsic.UI.Msgbox("One or more required dimension fields are blank", "Incomplete Plan Form")
+				F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.SelectCase(V.Screen.AddItemForm!cmdSaveNewItem.Caption)
+
+	'New record insert
+	F.Intrinsic.Control.Case("SAVE")
+		
+		'Get next priority number or start at 001 if no records yet exist for router/seq combination
+		F.Intrinsic.String.Build("Select IsNull(right('000'+cast(max(cast(PRIORITY as Int))+1 as Varchar(3)),3),'001') as EXP from GCG_6906_QUAL_PLAN where ROUTER = '{0}' and SEQUENCE = '{1}'", V.Screen.QualPlanForm!txt_Router.Text, V.Screen.QualPlanForm!ddl_Sequences.Text, V.Local.sSql)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sNewPriority)
+		
+		'If all required fields are present build insert query and run
+		F.Intrinsic.String.Build("Insert into GCG_6906_QUAL_PLAN values ('{0}', '{1}', '0', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')", V.Screen.QualPlanForm!txt_Router.Text, V.Screen.QualPlanForm!ddl_Sequences.Text, V.Local.sDimension, V.Local.sFrequency, V.Local.sMethod, V.Local.sBit, V.Local.fProcDim, V.Local.sProcDimDesc, V.Screen.AddItemForm!ddlUOM.Text, V.Local.fMin, V.Local.fMax,  V.Local.sNewPriority, V.Local.sGaugeNo, V.Local.sSql)
+		
+		F.ODBC.Connection!con.Execute(V.Local.sSql)
+		
+		F.Intrinsic.Control.CallSub(AddItemForm_UnLoad)
+		F.Intrinsic.Control.CallSub(RefreshGrid)
+		
+	'Record edit
+	F.Intrinsic.Control.Case("SAVE EDIT")
+	
+		'Capture records key sequence to edit
+		V.Local.sKeySeq.Set(V.DataTable.dtRouterPlan(V.Global.iGlobalIndex).KEY_SEQUENCE!FieldVal)
+		'Build update query and run
+		F.Intrinsic.String.Build("Update GCG_6906_QUAL_PLAN set DIMENSION = '{0}', FREQUENCY = '{1}', METHOD = '{2}', PASS_FAIL = '{3}', PROCESS_DIM = '{4}', PROCESS_DIM_DESC = '{5}', UOM = '{6}', CRITERIA_MIN = '{7}', CRITERIA_MAX = '{8}', GAUGE_NO = '{9}' where KEY_SEQUENCE = '{10}'", V.Local.sDimension, V.Local.sFrequency, V.Local.sMethod, V.Local.sBit, V.Local.fProcDim, V.Local.sProcDimDesc, V.Screen.AddItemForm!ddlUOM.Text, V.Local.fMin, V.Local.fMax, V.Local.sGaugeNo, V.Local.sKeySeq, V.Local.sSql)
+		F.ODBC.Connection!con.Execute(V.Local.sSql)
+		
+		F.Intrinsic.Control.CallSub(AddItemForm_UnLoad)
+		F.Intrinsic.Control.CallSub(RefreshGrid)
+		
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveNewItem_Click.End
+
+Program.Sub.RefreshGrid.Start
+F.Intrinsic.Control.Try
+
+GUI.QualPlanForm.GSGC_QualityPlan.Visible(False)
+GUI.QualPlanForm.GSGC_QualityPlan.SuspendLayout()
+F.Intrinsic.Control.CallSub(LoadQualPlanForm)
+GUI.QualPlanForm.GSGC_QualityPlan.ResumeLayout()
+GUI.QualPlanForm.GSGC_QualityPlan.Visible(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.RefreshGrid.End
+
+Program.Sub.chkPassFail_Change.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.AddItemForm!chkPassFail.Value, =, 1)
+	GUI.AddItemForm.txtProcDim.Enabled(False)
+	GUI.AddItemForm.txtMin.Enabled(False)
+	GUI.AddItemForm.txtMax.Enabled(False)
+	GUI.AddItemForm.txtProcDim.Text("")
+	GUI.AddItemForm.txtMin.Text("")
+	GUI.AddItemForm.txtMax.Text("")
+F.Intrinsic.Control.Else
+	GUI.AddItemForm.txtProcDim.Enabled(True)
+	GUI.AddItemForm.txtMin.Enabled(True)
+	GUI.AddItemForm.txtMax.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkPassFail_Change.End
+
+Program.Sub.GSGC_QualityPlan_RowCellClick.Start
+F.Intrinsic.Control.Try
+
+V.Local.sKeySeq.Declare(String)
+V.Local.fPriority.Declare(Float)
+V.Local.sSelect.Declare(String)
+V.Local.iRowIndex.Declare(Long)
+V.Local.sDTRet.Declare(String)
+V.Local.iOtherRowIndex.Declare(Long)
+V.Local.iOtherSort.Declare(Long)
+V.Local.iTemp.Declare(Long)
+V.Local.sPriority.Declare(String)
+V.Local.sOtherSort.Declare(String)
+V.Local.iIndex.Declare(Long)
+
+F.Intrinsic.Control.SelectCase(V.Args.Column)
+
+	F.Intrinsic.Control.Case("EDIT")
+	
+		'Populate UOM dropdownlist
+		GUI.AddItemForm.ddlUOM.AddItem("IN")
+		GUI.AddItemForm.ddlUOM.AddItem("MM")
+	
+		'Capture selected index
+		V.Global.iGlobalIndex.Set(V.Args.RowIndex)
+		
+		'Set all corresponding values on form
+		F.Intrinsic.Control.If(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).PASS_FAIL!FieldValTrim, =, "YES")
+			GUI.AddItemForm.chkPassFail.Value(1)
+		F.Intrinsic.Control.Else
+			GUI.AddItemForm.chkPassFail.Value(0)
+		F.Intrinsic.Control.EndIf
+		
+		GUI.AddItemForm.ddlUOM.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).UOM!FieldValTrim)
+		GUI.AddItemForm.txtDimension.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).DIMENSION!FieldValTrim)
+		GUI.AddItemForm.txtFrequency.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).FREQUENCY!FieldValTrim)
+		GUI.AddItemForm.txtMethod.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).METHOD!FieldValTrim)
+		GUI.AddItemForm.txtGauge.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).GAUGE_NO!FieldValTrim)
+		GUI.AddItemForm.txtProcDimDesc.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).PROCESS_DIM_DESC!FieldValTrim)
+		GUI.AddItemForm.txtProcDim.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).PROCESS_DIM!FieldValTrim)
+		GUI.AddItemForm.txtMin.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).CRITERIA_MIN!FieldValTrim)
+		GUI.AddItemForm.txtMax.Text(V.Datatable.dtRouterPlan(V.Global.iGlobalIndex).CRITERIA_MAX!FieldValTrim)
+		
+		'Show DELETE and SAVE EDIT buttons and show form for edit
+		GUI.AddItemForm.cmdSaveNewItem.Caption("SAVE EDIT")
+		GUI.AddItemForm.cmdDelete.Visible(True)
+		GUI.AddItemForm..Show
+
+	F.Intrinsic.Control.Case("UP")
+	
+		'Disable form and block events to avoid triggering process while a previous is still running
+		GUI.QualPlanForm.GSGC_QualityPlan.Enabled(False)
+		F.Intrinsic.Control.BlockEvents()
+	
+		
+		V.Local.iRowIndex.Set(V.Args.RowIndex)
+		V.Local.sPriority.Set(V.DataTable.dtRouterPlan(V.Local.iRowIndex).PRIORITY!FieldValLong)
+				
+		'Get previous row
+		F.Intrinsic.String.Build("PRIORITY < {0}", V.Local.sPriority, V.Local.sSelect)
+		F.Data.DataTable.Select("dtRouterPlan", V.Local.sSelect, V.Local.sDTRet)
+		
+		F.Intrinsic.Control.If(V.Local.sDTRet.IsNoReturn)
+			GUI.QualPlanForm.GSGC_QualityPlan.Enabled(True)
+			F.Intrinsic.Control.UnblockEvents()
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Split(V.Local.sDTRet, "*!*", V.Local.sDTRet)
+		V.Local.iOtherRowIndex.Set(V.Local.sDTRet(V.Local.sDTRet.UBound))
+		V.Local.iOtherSort.Set(V.DataTable.dtRouterPlan(V.Local.iOtherRowIndex).PRIORITY!FieldValLong)
+		
+		'swap
+		V.Local.iTemp.Set(V.Local.sPriority)
+		V.Local.sPriority.Set(V.Local.iOtherSort)
+		V.Local.iOtherSort.Set(V.Local.iTemp)
+		
+		'Format swapped priorities as strings to save back into dtRouterPlan
+		F.Intrinsic.String.Format(V.Local.sPriority, "000", V.Local.sPriority)
+		F.Intrinsic.String.Format(V.Local.iOtherSort, "000", V.Local.sOtherSort)
+	
+		F.Data.DataTable.SetValue("dtRouterPlan", V.Local.iRowIndex, "PRIORITY", V.Local.sPriority)
+		F.Data.DataTable.SetValue("dtRouterPlan", V.Local.iOtherRowIndex, "PRIORITY", V.Local.sOtherSort)
+		
+		F.Intrinsic.Control.CallSub(AddModifiedWC, "KEY_SEQUENCE", V.DataTable.dtRouterPlan(V.Local.iRowIndex).KEY_SEQUENCE!FieldValTrim)
+		F.Intrinsic.Control.CallSub(AddModifiedWC, "KEY_SEQUENCE", V.DataTable.dtRouterPlan(V.Local.iOtherRowIndex).KEY_SEQUENCE!FieldValTrim)
+		F.Intrinsic.Control.CallSub(SaveModifiedWCSort)
+		
+		'Re-enable form and unblock events 
+		GUI.QualPlanForm.GSGC_QualityPlan.Enabled(True)
+		F.Intrinsic.Control.UnblockEvents()
+		
+ 	F.Intrinsic.Control.Case("DOWN")
+		
+		'Disable form and block events to avoid triggering process while a previous is still running
+		GUI.QualPlanForm.GSGC_QualityPlan.Enabled(False)
+		F.Intrinsic.Control.BlockEvents()
+
+		V.Local.iRowIndex.Set(V.Args.RowIndex)
+		V.Local.sPriority.Set(V.DataTable.dtRouterPlan(V.Local.iRowIndex).PRIORITY!FieldValLong)
+				
+		'Get next row
+		F.Intrinsic.String.Build("PRIORITY > {0}", V.Local.sPriority, V.Local.sSelect)
+		F.Data.DataTable.Select("dtRouterPlan", V.Local.sSelect, V.Local.sDTRet)
+		
+		F.Intrinsic.Control.If(V.Local.sDTRet.IsNoReturn)
+			GUI.QualPlanForm.GSGC_QualityPlan.Enabled(True)
+			F.Intrinsic.Control.UnblockEvents()
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Split(V.Local.sDTRet, "*!*", V.Local.sDTRet)
+		V.Local.iOtherRowIndex.Set(V.Local.sDTRet(0))
+		V.Local.iOtherSort.Set(V.DataTable.dtRouterPlan(V.Local.iOtherRowIndex).PRIORITY!FieldValLong)
+		
+		'Swap
+		V.Local.iTemp.Set(V.Local.sPriority)
+		V.Local.sPriority.Set(V.Local.iOtherSort)
+		V.Local.iOtherSort.Set(V.Local.iTemp)
+		
+		'Format swapped priorities as strings to save back into dtRouterPlan
+		F.Intrinsic.String.Format(V.Local.sPriority, "000", V.Local.sPriority)
+		F.Intrinsic.String.Format(V.Local.iOtherSort, "000", V.Local.sOtherSort)
+	
+		F.Data.DataTable.SetValue("dtRouterPlan", V.Local.iRowIndex, "PRIORITY", V.Local.sPriority)
+		F.Data.DataTable.SetValue("dtRouterPlan", V.Local.iOtherRowIndex, "PRIORITY", V.Local.sOtherSort)
+		
+		F.Intrinsic.Control.CallSub(AddModifiedWC, "KEY_SEQUENCE", V.DataTable.dtRouterPlan(V.Local.iRowIndex).KEY_SEQUENCE!FieldValTrim)
+		F.Intrinsic.Control.CallSub(AddModifiedWC, "KEY_SEQUENCE", V.DataTable.dtRouterPlan(V.Local.iOtherRowIndex).KEY_SEQUENCE!FieldValTrim)
+		F.Intrinsic.Control.CallSub(SaveModifiedWCSort)
+		
+		'Re-enable form and unblock events 
+		GUI.QualPlanForm.GSGC_QualityPlan.Enabled(True)
+		F.Intrinsic.Control.UnblockEvents()
+
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSGC_QualityPlan_RowCellClick.End
+
+Program.Sub.AddModifiedWC.Start
+F.Intrinsic.Control.Try
+
+V.Local.bInString.Declare(Boolean)
+V.Local.sSubString.Declare(String)
+
+V.Local.sSubstring.Set(V.Args.KEY_SEQUENCE)
+F.Intrinsic.String.IsInString(V.Global.sModifiedPriority, V.Local.sSubString, "True", V.Local.bInString)
+F.Intrinsic.Control.If(V.Local.bInString.Not)
+	F.Intrinsic.Control.If(V.Global.sModifiedPriority.Trim, =, "")
+		V.Global.sModifiedPriority.Set(V.Local.sSubString)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}*!*{1}", V.Global.sModifiedPriority, V.Local.sSubString, V.Global.sModifiedPriority)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.AddModifiedWC.End
+
+Program.Sub.SaveModifiedWCSort.Start
+F.Intrinsic.Control.Try
+
+V.Local.iCounter.Declare(Long)
+V.Local.sFilter.Declare(String)
+V.Local.sKeySeqList.Declare(String)
+V.Local.sSql.Declare(String)
+
+'Check for any values to update
+F.Intrinsic.Control.If(V.Global.sModifiedPriority.Trim, =, "")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Split values to update and use to filter dataview
+F.Intrinsic.String.Split(V.Global.sModifiedPriority, "*!*", V.Local.sKeySeqList)
+F.Data.DataView.Create("dtRouterPlan", "dvRouterPlan", 22)
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sKeySeqList.UBound, 1)
+	F.Intrinsic.String.Build("KEY_SEQUENCE = '{0}'", V.Local.sKeySeqList(V.Local.iCounter), V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtRouterPLan", "dvRouterPLan", V.Local.sFilter)
+	'Save filtered value to dt and SaveToDB to update priority record
+	F.Data.DataView.ToDataTable("dtRouterPLan", "dvRouterPLan", "dtSave")
+	F.Data.DataTable.SaveToDB("dtSave", "Con", "GCG_6906_QUAL_PLAN", "KEY_SEQUENCE", 256, "KEY_SEQUENCE@!@KEY_SEQUENCE*!*PRIORITY@!@PRIORITY")
+	
+	F.Data.DataTable.Close("dtSave")
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Data.DataView.Close("dtRouterPLan", "dvRouterPLan")
+
+V.Global.sModifiedPriority.Set("")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.SaveModifiedWCSort.End
+
+Program.Sub.UpdatePriorityValues.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSelect.Declare(String)
+V.Local.sRer.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sPriority.Declare(String)
+V.Local.iCount.Declare(Long)
+
+'Capture all priority records higher than the deleted record into table
+F.Intrinsic.String.Build("PRIORITY > {0}", V.Args.DeletedPriorityNo, V.Local.sFilter)
+F.Data.DataView.Create("dtRouterPlan", "dvRouterPLan", 22)
+F.Data.DataView.SetFilter("dtRouterPlan", "dvRouterPlan", V.Local.sFilter)
+F.Data.DataView.ToDataTable("dtRouterPlan", "dvRouterPlan", "dtToUpdate")
+
+'If table is not blank proceed to update priority values
+F.Intrinsic.Control.If(V.DataTable.dtToUpdate.RowCount, !=, 0)
+	'Loop through table and decrease each priority by 1
+	F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.dtToUpdate.RowCount--, 1)
+		V.Local.sPriority.Set(V.DataTable.dtToUpdate(V.Local.iCount).PRIORITY!FieldVal)
+		F.Intrinsic.Math.Sub(V.Local.sPriority, 1, V.Local.sPriority)
+		'Reformat priority number to "000"
+		F.Intrinsic.String.Format(V.Local.sPriority, "000", V.Local.sPriority)
+		F.Data.Datatable.SetValue("dtToUpdate", V.Local.iCount, "PRIORITY", V.Local.sPriority)
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	
+	
+	F.Data.DataTable.SaveToDB("dtToUpdate", "Con", "GCG_6906_QUAL_PLAN", "KEY_SEQUENCE", 256, "KEY_SEQUENCE@!@KEY_SEQUENCE*!*PRIORITY@!@PRIORITY")
+	
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Close("dtToUpdate")
+F.Data.DataView.Close("dtRouterPlan", "dvRouterPlan")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.UpdatePriorityValues.End
+
+Program.Sub.cmdDelete_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sDelSequence.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sPriority.Declare(String)
+
+'Capture current key sequence to delete
+V.Local.sDelsequence.Set(V.DataTable.dtRouterPlan(V.Global.iGlobalIndex).KEY_SEQUENCE!FieldValTrim)
+'Capture selected record's priority value
+V.Local.sPriority.Set(V.DataTable.dtRouterPlan(V.Global.iGlobalIndex).PRIORITY!FieldValTrim)
+
+'Delete current record from table
+F.Intrinsic.String.Build("Delete from GCG_6906_QUAL_PLAN where KEY_SEQUENCE = '{0}'", V.Local.sDelSequence, V.Local.sSql)
+F.ODBC.Connection!con.Execute(V.Local.sSql)
+'Call sub to update any
+F.Intrinsic.Control.CallSub(UpdatePriorityValues, "DeletedPriorityNo", V.Local.sPriority)
+
+'Unload AddItemForm and refresh grid
+F.Intrinsic.Control.CallSub(AddItemForm_UnLoad)
+F.Intrinsic.Control.CallSub(RefreshGrid)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSerialize.Declare(String)
+V.Local.sForm.Declare(String)
+V.Local.sGridControl.Declare(String)
+V.Local.sGridView.Declare(String)
+V.Local.sREGID.Declare(String)
+
+V.Local.sForm.Set(V.Args.Form.Trim)
+V.Local.sGridControl.Set(V.Args.GridControl.Trim)
+V.Local.sGridView.Set(V.Args.GridView.Trim)
+V.Local.sREGID.Set(V.Args.REGID.Trim)
+
+'GUI.[V.Local.sForm].[V.Local.sGridControl].Serialize(V.Local.sGridView, V.Local.sSerialize)
+'F.Global.Registry.AddValue(V.Caller.User, V.Caller.CompanyCode, V.Local.sGridView, V.Local.sREGID, 1000, False, "Serialize", False, 0, -999.0 , 1/1/1980, 12:00:00 AM, V.Local.sSerialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSerialize.Declare(String)
+V.Local.sForm.Declare(String)
+V.Local.sGridControl.Declare(String)
+V.Local.sGridView.Declare(String)
+V.Local.sREGID.Declare(String)
+
+V.Local.sForm.Set(V.Args.Form.Trim)
+V.Local.sGridControl.Set(V.Args.GridControl.Trim)
+V.Local.sGridView.Set(V.Args.GridView.Trim)
+V.Local.sREGID.Set(V.Args.REGID.Trim)
+
+'F.Global.Registry.ReadValue(V.Caller.User, V.Caller.CompanyCode, V.Local.sGridView, V.Local.sREGID, 1000, 6, "", V.Local.sSerialize)
+'F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+'	Gui.[V.Local.sForm].[V.Local.sGridControl].Deserialize(V.Local.sSerialize)
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.ErrorMessage.Start
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+V.Static.bError.Declare(Boolean, False)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Static.bError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+V.Static.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+	
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.QualCheck_UnLoad.Start
+F.Intrinsic.Control.Try
+
+V.Local.sMsg.Declare(String)
+
+'Check if unload call if coming from the preupdate WO process
+F.Intrinsic.Control.If(V.Global.bFromUpdateCheck)
+	F.Intrinsic.Control.If(V.Global.bCompleted, =, 0)
+		F.Intrinsic.String.Build("There are still missing quality plan records,{0}Please complete plan before attempting to update job again.", V.Ambient.NewLine, V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg, "Incomplete Quality Plan")
+		'Update override flag to stop core process from updating job
+		V.Passed.777777.Set(1)
+		'Return bFromUpdateCheck to default(false)
+		V.Global.bFromUpdateCheck.Set(0)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Otherwise close form as normal
+F.Intrinsic.Control.If(V.ODBC.con.Exists)
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck.Exists)
+	F.Data.Datatable.Close("dtQualPlanCheck")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.QualCheck_UnLoad.End
+
+Program.Sub.GSCG_QualCheck_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local.iMeasurementCol.Declare(Long)
+
+F.Intrinsic.Control.SelectCase(V.Args.Column)
+		
+	F.Intrinsic.Control.Case("MEASUREMENT")
+		GUI.QualCheck.GSCG_QualCheck.GetColumnIndexByName("gvQualPlanCheck", "MEASUREMENT", V.Local.iMeasurementCol)
+		'Set MEASUREMENT cell back color to red when measurement input is outside min/max range
+		F.Intrinsic.Control.If(V.Datatable.dtQualPlanCheck(V.Args.RowIndex).MEASUREMENT!FieldVal, <, V.Datatable.dtQualPlanCheck(V.Args.RowIndex).CRITERIA_MIN!FieldVal, OR, V.Datatable.dtQualPlanCheck(V.Args.RowIndex).MEASUREMENT!FieldVal, >, V.Datatable.dtQualPlanCheck(V.Args.RowIndex).CRITERIA_MAX!FieldVal)
+			GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.iMeasurementCol, V.Args.RowIndex, "backcolor", "red")
+		F.Intrinsic.Control.Else
+			GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.iMeasurementCol, V.Args.RowIndex, "backcolor", "lightyellow")
+		F.Intrinsic.Control.EndIf
+		
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSCG_QualCheck_CellValueChanged.End
+
+Program.Sub.OutOfRangeValues.Start
+F.Intrinsic.Control.Try
+
+V.Local.sRet.Declare(String)
+V.Local.sMsg.Declare(String)
+
+F.Intrinsic.String.Build("One or more measurement values are out of range and cannot be saved.{0}Please correct measurement or consult with supervisor.", V.Ambient.NewLine, V.Local.sMsg)
+
+F.Intrinsic.UI.Msgbox(V.Local.sMsg, "Out Of Range Values")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.OutOfRangeValues.End
+
+Program.Sub.cmdSaveInput_Click.Start
+F.Intrinsic.Control.Try
+
+'Set current date and time to PSQL format
+V.Local.iCount.Declare(Long)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sPart.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.bSheetComplete)
+	F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "COMP_SHEET", 1)
+	
+F.Intrinsic.Control.EndIf
+
+'Loop table to get COMPLETED flag result on each record (station can be left blank)
+F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.dtQualPlanCheck.RowCount--, 1)
+	F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck(V.Local.iCount).MEASUREMENT!FieldVal, !=, 0, OR, V.DataTable.dtQualPlanCheck(V.Local.iCount).PASS_FAIL!FieldValTrim, !=, "", V.DataTable.dtQualPlanCheck(V.Local.iCount).ZERO_VALUE!FieldValTrim, =, True)
+		F.Data.Datatable.SetValue("dtQualPlanCheck", V.Local.iCount, "COMPLETED", 1)
+		
+	F.Intrinsic.Control.EndIf
+		
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+'Check for out or range measurement values
+'Set filter to check zero value records for range validation
+F.Data.DataView.Create("dtQualPlanCheck", "dvZeroVal")
+F.Data.DataView.SetFilter("dtQualPlanCheck", "dvZeroVal", "ZERO_VALUE = 1 AND (MEASUREMENT < CRITERIA_MIN OR MEASUREMENT > CRITERIA_MAX)")
+'Set filter to check all of ther records for range validation
+F.Intrinsic.Control.If(V.DataView.dtQualPlanCheck!dvQualPlanCheck.Exists)
+	F.Data.DataView.Close("dtQualPlanCheck", "dvQualPlanCheck")
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Create("dtQualPlanCheck", "dvQualPlanCheck")
+F.Data.DataView.SetFilter("dtQualPlanCheck", "dvQualPlanCheck", "PASS_FAIL_PLAN = 0 AND (MEASUREMENT < CRITERIA_MIN OR MEASUREMENT > CRITERIA_MAX) AND MEASUREMENT <> 0")
+
+F.Intrinsic.Control.If(V.DataView.dtQualPlanCheck!dvQualPlanCheck.RowCount, <>, 0, OR, V.DataView.dtQualPlanCheck!dvZeroVal.RowCount, <>, 0)
+	F.Intrinsic.Control.CallSub(OutOfRangeValues)
+	F.Data.DataView.Close("dtQualPlanCheck", "dvZeroVal")
+	F.Data.DataView.Close("dtQualPlanCheck", "dvQualPlanCheck")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'----------------------------------------------------------------------------------------------------------------------
+'Edit 1/23/2022 - Customer requests that the part number be saved on the quality sheet along with the rest of the information
+'Add PART column to datatable and set to part already in form screen
+F.Data.Datatable.AddColumn("dtQualPlanCheck", "PART", "String")
+F.Data.Datatable.SetValue("dtQualPlanCheck", -1, "PART", V.Screen.QualCheck!lblPartText.Text)
+'----------------------------------------------------------------------------------------------------------------------
+
+'Save to DB to update or insert new records in the GCG_6906_QUAL_CHECKS table
+F.Data.Datatable.SaveToDB("dtQualPlanCheck", "con", "GCG_6906_QUAL_CHECKS", "JOB*!*SUFFIX*!*SEQ*!*KEY_SEQUENCE*!*SHEET_NO", 256, "JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*KEY_SEQUENCE@!@KEY_SEQUENCE*!*MEASUREMENT@!@MEASUREMENT*!*PASS_FAIL@!@PASS_FAIL*!*DATE@!@DATE*!*TIME@!@TIME*!*EMPLOYEE_NO@!@EMPLOYEE_NO*!*EMPLOYEE_NAME@!@EMPLOYEE_NAME*!*COMPLETED@!@COMPLETED*!*STATION@!@STATION*!*OVERRIDE@!@OVERRIDE*!*COMP_SHEET@!@COMP_SHEET*!*SHEET_NO@!@SHEET_NO*!*ZERO_VALUE@!@ZERO_VALUE*!*PART@!@PART")
+
+'Check for quality plan total completion
+F.Intrinsic.String.Build("Select COMPLETED from GCG_6906_QUAL_CHECKS where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}' and COMPLETED = 0", V.Screen.QualCheck!lblWOText.Text, V.Screen.QualCheck!lblSuffixText.Text, V.Screen.QualCheck!lblSEQText.Text, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, =, True)
+	V.Global.bCompleted.Set(1)
+F.Intrinsic.Control.Else
+	V.Global.bCompleted.Set(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Msgbox("Quality Plan data has been saved")
+
+F.Intrinsic.Control.CallSub(QualCheck_Unload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveInput_Click.End
+
+Program.Sub.cmdSaveSheet_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sRet.Declare(String)
+
+'Check all required fields have been filled in on current sheet
+F.Intrinsic.Control.If(V.DataView.dtQualPlanCheck!dvQualPlanCheck.Exists)
+	F.Data.DataView.Close("dtQualPlanCheck", "dvQualPlanCheck")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.Create("dtQualPlanCheck", "dvQualPlanCheck")
+F.Data.DataView.SetFilter("dtQualPlanCheck", "dvQualPlanCheck", "(PASS_FAIL_PLAN = 0 AND MEASUREMENT = 0 AND ZERO_VALUE <> 1) OR (PASS_FAIL_PLAN = 1 AND PASS_FAIL = '')")
+
+'
+F.Intrinsic.Control.If(V.DataView.dtQualPlanCheck!dvQualPlanCheck.RowCount, !=, 0)
+'	F.Intrinsic.UI.Msgbox("Please fill in all required fields before saving sheet", "Incomplete Quality Sheet")
+	f.Intrinsic.UI.Msgbox("Not all fields are complete. Save sheet anyway?","WARNING!",4,v.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet, =, V.Ambient.MsgBoxNo)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+    	V.Global.bSheetComplete.Set(1)
+    	F.Intrinsic.Control.CallSub(cmdSaveInput_Click)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+	'Check with user for confirmation on save and launch save sub if confirmed
+	F.Intrinsic.UI.Msgbox("Are you sure you want to save and close the current sheet?", "Complete Sheet", 4, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet, =, V.Ambient.MsgBoxNo)
+    	F.Intrinsic.Control.ExitSub
+    
+    F.Intrinsic.Control.Else
+    	V.Global.bSheetComplete.Set(1)
+    	F.Intrinsic.Control.CallSub(cmdSaveInput_Click)
+    		
+    F.Intrinsic.Control.EndIf
+   	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveSheet_Click.End
+
+Program.Sub.txtPassword_KeyPressEnter.Start
+V.Local.bRet.Declare(Boolean)
+V.Local.sPass.Declare(String)
+
+'Grab password input and validate
+F.Global.Security.ValidateUser(V.Caller.CompanyCode, "SUPERVSR", V.Screen.Override!txtPassword.Text, V.Local.bRet)
+
+'If password input is invalid warn the user
+F.Intrinsic.Control.If(V.Local.bRet, =, False)
+	GUI.Override.lblVerifyingLabel.Visible(True)
+
+'If password is valid end the program and allow the job to update with incomplete quality plan records
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.End
+	
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.txtPassword_KeyPressEnter.End
+
+Program.Sub.Override_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.Override_UnLoad.End
+
+Program.Sub.txtPassword_LostFocus.Start
+F.Intrinsic.Control.CallSub(KeyPressEnter)
+Program.Sub.txtPassword_LostFocus.End
+
+Program.Sub.GSCG_QualCheck_RowCellClick.Start
+F.Intrinsic.Control.Try
+
+V.Local.bValue.Declare(Boolean)
+V.Local.iMeasurementCol.Declare(Long)
+
+F.Intrinsic.Control.SelectCase(V.Args.Column)
+
+	F.Intrinsic.Control.Case("ZERO_VALUE")
+
+		F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck(V.Args.RowIndex).PASS_FAIL_PLAN!FieldVal, =, 0)
+		
+			v.Local.bValue.Set(V.DataTable.dtQualPlanCheck(V.Args.RowIndex).ZERO_VALUE!FieldVal)
+			F.Data.Datatable.SetValue("dtQualPlanCheck", V.Args.RowIndex, "ZERO_VALUE", V.Local.bValue.Not)
+			GUI.QualCheck.GSCG_QualCheck.GetColumnIndexByName("gvQualPlanCheck", "MEASUREMENT", V.Local.iMeasurementCol)
+			
+			F.Intrinsic.Control.If(V.DataTable.dtQualPlanCheck(V.Args.RowIndex).ZERO_VALUE!FieldVal, =, True)
+				'Set MEASUREMENT column to 0
+				F.Data.DataTable.SetValue("dtQualPlanCheck", V.Args.RowIndex, "MEASUREMENT", 0.0000)
+				GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck", V.Local.iMeasurementCol, V.Args.RowIndex, "Locked", True)
+				
+				'Set MEASUREMENT cell back color to red when measurement input is outside min/max range
+				F.Intrinsic.Control.If(V.Datatable.dtQualPlanCheck(V.Args.RowIndex).MEASUREMENT!FieldVal, <, V.Datatable.dtQualPlanCheck(V.Args.RowIndex).CRITERIA_MIN!FieldVal, OR, V.Datatable.dtQualPlanCheck(V.Args.RowIndex).MEASUREMENT!FieldVal, >, V.Datatable.dtQualPlanCheck(V.Args.RowIndex).CRITERIA_MAX!FieldVal)
+					GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.iMeasurementCol, V.Args.RowIndex, "backcolor", "red")
+				'Else return the cell to its default yello form
+				F.Intrinsic.Control.Else
+					GUI.QualCheck.GSCG_QualCheck.SetCellAppearance("gvQualPlanCheck", V.Local.iMeasurementCol, V.Args.RowIndex, "backcolor", "lightyellow")
+			
+				F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.Else
+				GUI.QualCheck.GSCG_QualCheck.SetCellProperty("gvQualPlanCheck", V.Local.iMeasurementCol, V.Args.RowIndex, "Locked", False)
+					
+			F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.GSCG_QualCheck_RowCellClick.End
+
+Program.Sub.cmdCopyToRouter_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sColTitles.Declare(String)
+V.Local.sColWidths.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRoutTarget.Declare(String)
+V.Local.sRoutSource.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.sSelection.Declare(String)
+
+F.Intrinsic.String.Split("Router*!*Rev*!*Description", "*!*", V.Local.sColTitles)
+F.Intrinsic.String.Split("500*!*200*!*800", *!*, V.Local.sColWidths)
+
+F.Intrinsic.UI.Browser("Select router to copy to:", "con", "Select distinct LEFT(ROUTER, 17) as ROUTER, RIGHT(ROUTER, 3) as REV, DESCRIPTION_ROUTER from V_ROUTER_HEADER", V.Local.sColTitles, V.Local.sColWidths, 5500, 8000, V.local.sRet)
+
+F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet(1), !=, "")
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sRet(0), V.Local.sRet(1), V.Local.sRouter)
+F.Intrinsic.Control.Else
+	V.Local.sRouter.Set(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+'Get sequences from copy target router
+F.Intrinsic.String.Build("Select LINE_ROUTER from V_ROUTER_LINE where ROUTER = '{0}' and LMO = 'L'", V.Local.sRouter, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRoutTarget)
+'Get sequences from copy source router
+F.Intrinsic.String.Build("Select LINE_ROUTER from V_ROUTER_LINE where ROUTER = '{0}' and LMO = 'L'", V.Screen.QualPlanForm!txt_Router.Text, V.Local.sSql)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRoutSource)
+
+'Check sequences match between source and target routers
+F.Intrinsic.Control.If(V.Local.sRoutTarget, =, V.Local.sRoutSource)
+	'Check for existing plan records on target router
+	F.Intrinsic.String.Build("Select PASS_FAIL from GCG_6906_QUAL_PLAN where ROUTER = '{0}'", V.Local.sRouter.Trim, V.Local.sSql)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSql, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF, !=, True)
+		'If records exists allow user to confirm overwrite, otherwise exit sub
+		F.Intrinsic.String.Build("Target router ({0}) already contains quality plan records. Overwrite?", V.Local.sRouter.Trim, V.Local.sMessage)
+		F.Intrinsic.UI.Msgbox(V.Local.sMessage, 4, V.Local.sSelection)
+
+			F.Intrinsic.Control.If(V.Local.sSelection, !=, V.Ambient.MsgBoxNo)
+				'If confirmed, delete current router plan records before adding new copied ones
+				F.Intrinsic.String.Build("Delete from GCG_6906_QUAL_PLAN where router = '{0}'", V.Local.sRouter.Trim, V.Local.sSql)
+				F.ODBC.Connection!con.Execute(V.Local.sSql)
+				
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.ExitSub
+				
+			F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.Datatable.CreateFromSQL("dtRoutSource", "con", "Select * from GCG_6906_QUAL_PLAN")
+	F.Data.Datatable.SetValue("dtRoutSource", -1, "ROUTER", V.Local.sRouter.Trim)
+	F.Data.Datatable.RemoveColumn("dtRoutSource", "KEY_SEQUENCE")
+	F.Data.Datatable.SaveToDB("dtRoutSource", "con", "GCG_6906_QUAL_PLAN", "ROUTER", 128)
+	F.Intrinsic.String.Build("Router {0} plan has been copied to router {1} sucessfully", V.Screen.QualPlanForm!txt_Router.Text, V.Local.sRouter.Trim, V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage, "Copy Successful")
+
+'If target router does not have mathcing labor sequences copy cannot be performed
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Target router sequences do not match source router. Unable to copy", "Unable To Copy")
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCopyToRouter_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8286.22461$}$1
+${$6$}$Angel$}$20230209093459492$}$KXl0r/FkrMYwb/r4ukQ87VNzvoHa8Zo7Sd4IrZA0EFndYU8qHQ5qd5aEH3S1o2rLFN8W4gR3bbU=
+Program.Sub.Comments.End
